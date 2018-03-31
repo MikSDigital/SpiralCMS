@@ -12,6 +12,6 @@ class BlogController extends Controller
      */
     public function index()
     {
-        die("HASD")
+        die("HASD");
     }
 }
