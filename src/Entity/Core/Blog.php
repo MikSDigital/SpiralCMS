@@ -11,7 +11,7 @@ class Blog
 {
     /**
      * @ORM\Id()
-     * @ORNM\GeneratedValue()
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      */
     private $id;

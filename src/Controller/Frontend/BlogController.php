@@ -12,6 +12,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        die("HASD");
+        return $this->render('pizza/index.html.twig', [
+            'controller_name' => 'BlogController',
+        ]);
     }
 }

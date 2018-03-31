@@ -4,7 +4,7 @@
 version: "3.1"
 services:
     mysql:
-      image: mysql:8.0
+      image: mysql:5.7
       container_name: spiralcms-mysql
       working_dir: /application
       volumes:
@@ -12,8 +12,8 @@ services:
       environment:
         - MYSQL_ROOT_PASSWORD=root
         - MYSQL_DATABASE=spiralcms
-        - MYSQL_USER=root
-        - MYSQL_PASSWORD=root
+        - MYSQL_USER=dbuser
+        - MYSQL_PASSWORD=dbpw
       ports:
         - "8002:3306"
 
