@@ -1,0 +1,14 @@
+@import '~startbootstrap-blog-home/vendor/bootstrap/css/bootstrap.css';
+@import '~startbootstrap-blog-home/vendor/bootstrap/css/bootstrap-grid.css';
+@import '~startbootstrap-blog-home/vendor/bootstrap/css/bootstrap-reboot.css';
+
+$cinco-percent: 5%;
+
+
+.spiralcms-blogentries-content {
+  margin-top: $cinco-percent;
+}
+
+.spiralcms-right-bar {
+  margin-top: $cinco-percent;
+}

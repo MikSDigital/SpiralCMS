@@ -8,11 +8,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class BlogController extends Controller
 {
     /**
-     * @Route("/blog", name="blog")
+     * @Route("/", name="index")
      */
     public function index()
     {
-        return $this->render('pizza/index.html.twig', [
+
+        // $this->get('blog');
+
+        return $this->render('frontend/toroide/index.html.twig', [
             'controller_name' => 'BlogController',
         ]);
     }

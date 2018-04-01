@@ -20,7 +20,7 @@ class BlogRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Blog[] Returns an array of Blog objects
+//     * @return Post[] Returns an array of Post objects
 //     */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class BlogRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Blog
+    public function findOneBySomeField($value): ?Post
     {
         return $this->createQueryBuilder('b')
             ->andWhere('b.exampleField = :val')
