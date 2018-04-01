@@ -12,9 +12,6 @@ class BlogController extends Controller
      */
     public function index()
     {
-
-        // $this->get('blog');
-
         return $this->render('frontend/toroide/index.html.twig', [
             'controller_name' => 'BlogController',
         ]);
