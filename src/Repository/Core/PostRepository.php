@@ -1,23 +1,43 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repository\Core;
 
-use App\Entity\Blog;
+use App\Entity\Core\Post;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method Blog|null find($id, $lockMode = null, $lockVersion = null)
- * @method Blog|null findOneBy(array $criteria, array $orderBy = null)
- * @method Blog[]    findAll()
- * @method Blog[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Post|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Post|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Post[]    findAll()
+ * @method Post[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class BlogRepository extends ServiceEntityRepository
+class PostRepository extends ServiceEntityRepository
 {
+    /**
+     * PostRepository constructor.
+     * @param RegistryInterface $registry
+     */
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, Blog::class);
+        parent::__construct($registry, Post::class);
     }
+
+    /**
+     * @param $limit
+     * @param string $orderBy
+     * @param string $order
+     * @return mixed
+     */
+    public function getLimited($limit, $orderBy = 'p.id', $order = 'asc')
+    {
+        $query = $this->createQueryBuilder('p')
+            ->orderBy($orderBy, $order)
+            ->setMaxResults( $limit );
+
+        return $query->getQuery()->getResult();
+    }
+
 
 //    /**
 //     * @return Post[] Returns an array of Post objects

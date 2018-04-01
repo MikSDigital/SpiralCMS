@@ -5,14 +5,14 @@ namespace App\Entity\Core;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\PostRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\Core\PostRepository")
  */
 class Post
 {
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue(strategy="AUTO")
-     * @ORM\Column(type="integer", , name="post_id")
+     * @ORM\Column(type="integer", name="post_id")
      */
     private $id;
 
@@ -47,14 +47,26 @@ class Post
     private $status;
 
     /**
-     * @ORM\Column(type="integer", name="post_commentStatus")
+     * @var Author
+     *
+     * @ORM\ManyToOne(targetEntity="Author")
+     * @ORM\JoinColumn(name="post_author", referencedColumnName="author_id")
      */
-    private $commentStatus;
+    private $author;
 
     /**
      * @ORM\Column(type="string", length=255, unique=true, name="post_extract")
      */
     private $extract;
+
+    /**
+     * Post constructor.
+     */
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime();
+        $this->updatedAt = new \DateTime();
+    }
 
     public function getId()
     {
@@ -140,22 +152,6 @@ class Post
     /**
      * @return mixed
      */
-    public function getCommentStatus()
-    {
-        return $this->commentStatus;
-    }
-
-    /**
-     * @param mixed $commentStatus
-     */
-    public function setCommentStatus($commentStatus): void
-    {
-        $this->commentStatus = $commentStatus;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getExtract()
     {
         return $this->extract;
@@ -167,5 +163,21 @@ class Post
     public function setExtract($extract): void
     {
         $this->extract = $extract;
+    }
+
+    /**
+     * @return Author
+     */
+    public function getAuthor(): Author
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param Author $author
+     */
+    public function setAuthor(Author $author): void
+    {
+        $this->author = $author;
     }
 }
