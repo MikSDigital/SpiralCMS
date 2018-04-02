@@ -28,5 +28,9 @@ services:
     # please note that last definitions always *replace* previous ones
 
     frontend.post:
-        class: '../src/Service/Frontend/PostService'
+        class: '../src/Service/Core/PostService'
+        autowire: true
+
+    category.post:
+        class: '../src/Service/Core/CategoryService'
         autowire: true

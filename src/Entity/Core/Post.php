@@ -47,8 +47,6 @@ class Post
     private $status;
 
     /**
-     * @var Author
-     *
      * @ORM\ManyToOne(targetEntity="Author")
      * @ORM\JoinColumn(name="post_author", referencedColumnName="author_id")
      */
@@ -58,6 +56,12 @@ class Post
      * @ORM\Column(type="string", length=255, unique=true, name="post_extract")
      */
     private $extract;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Category")
+     * @ORM\JoinColumn(name="post_category", referencedColumnName="category_id")
+     */
+    private $category;
 
     /**
      * Post constructor.
@@ -179,5 +183,21 @@ class Post
     public function setAuthor(Author $author): void
     {
         $this->author = $author;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param mixed $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
     }
 }

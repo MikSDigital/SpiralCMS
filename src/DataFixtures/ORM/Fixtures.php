@@ -4,6 +4,7 @@ namespace App\DataFixtures\ORM;
 
 
 use App\Entity\Core\Author;
+use App\Entity\Core\Category;
 use App\Entity\Core\Post;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -13,11 +14,14 @@ class Fixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $author = new Author();
-
         $author->setName('Gorkamu');
         $author->setBio('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.');
-
         $manager->persist($author);
+
+        $category = new Category();
+        $category->setTitle('Desarrollo');
+        $category->setSlug('desarrollo');
+        $manager->persist($category);
 
         $post = new Post();
         $post->setTitle('Test title number one');
@@ -26,8 +30,13 @@ class Fixtures extends Fixture
         $post->setAuthor($author);
         $post->setStatus(1);
         $post->setExtract('Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.');
-
+        $post->setCategory($category);
         $manager->persist($post);
+
+        $category = new Category();
+        $category->setTitle('SEO');
+        $category->setSlug('seo');
+        $manager->persist($category);
 
         $post = new Post();
         $post->setTitle('Test title number two');
@@ -36,8 +45,13 @@ class Fixtures extends Fixture
         $post->setAuthor($author);
         $post->setStatus(1);
         $post->setExtract('aaContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.');
-
+        $post->setCategory($category);
         $manager->persist($post);
+
+        $category = new Category();
+        $category->setTitle('Otros');
+        $category->setSlug('otros');
+        $manager->persist($category);
 
         $post = new Post();
         $post->setTitle('Test title number three');
@@ -46,7 +60,7 @@ class Fixtures extends Fixture
         $post->setAuthor($author);
         $post->setStatus(1);
         $post->setExtract('asddeContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.');
-
+        $post->setCategory($category);
         $manager->persist($post);
 
         $manager->flush();

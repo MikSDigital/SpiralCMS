@@ -3,6 +3,7 @@
 namespace App\Controller\Frontend;
 
 use App\Form\Type\SearchType;
+use App\Service\Core\CategoryService;
 use App\Service\Core\PostService;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,13 +16,17 @@ class BlogController extends Controller
     /** @var PostService $postService */
     private $postService;
 
+    /** @var  CategoryService $categoryService */
+    private $categoryService;
+
     /**
      * BlogController constructor.
      * @param PostService $postService
      */
-    public function __construct(PostService $postService)
+    public function __construct(PostService $postService, CategoryService $categoryService)
     {
         $this->postService = $postService;
+        $this->categoryService = $categoryService;
     }
 
     /**
@@ -35,10 +40,20 @@ class BlogController extends Controller
             'posts' => $this->postService->getFiltered(PostService::LIMIT)
         ]);
     }
+    /**
+     * @Route("/category/{slug}", name="category")
+     * @Method({"GET"})
+     */
+    public function category($slug)
+    {
+        return $this->render('frontend/toroide/category.html.twig', [
+            'category' => $this->categoryService->getOneBy(['slug' => $slug])
+        ]);
+    }
 
     /**
-     * @Route("{slug}", name = "post", requirements={"slug" = "^(?!.*(search|delete)$).*"}, options = {"expose"=true})
-     * @Route("/{post/{slug}", name="post_alias")
+     * @Route("{slug}", name = "post", requirements={"slug" = "^(?!.*(search|category)$).*"}, options = {"expose"=true})
+     * @Route("/post/{slug}", name="post_alias")
      * @Method({"GET"})
      */
     public function post($slug)
@@ -64,18 +79,34 @@ class BlogController extends Controller
                 'post' => $this->postService->getOneBy(['slug' => $request->query->get('s')])
             ]);
         }
-
     }
 
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function renderSearch(Request $request)
     {
         $form = $this->getSearchForm();
-
         return $this->render('frontend/toroide/partials/search_form.html.twig', [
             'form' => $form->createView(),
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function renderNavigator(Request $request)
+    {
+        return $this->render('frontend/toroide/partials/navigator.html.twig', [
+            'categories' => $this->categoryService->getAll(),
+        ]);
+    }
+
+    /**
+     * @return mixed
+     */
     private function getSearchForm()
     {
         return $this->get('form.factory')->createNamed(null, SearchType::class, null, [
