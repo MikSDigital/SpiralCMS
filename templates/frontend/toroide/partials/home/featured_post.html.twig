@@ -2,10 +2,10 @@
     <div class="card flex-md-row mb-4 box-shadow h-md-250 no-border">
         <div class="card-body d-flex flex-column align-items-start spiral-featured-post-content">
             <h5 class="mb-0 spiral-featured-post-title">
-                <a class="text-dark font-family" href="#">{{ featuredpost.title }}</a>
+                <a class="text-dark font-family" href="{{ path('post', {'categorySlug': featuredpost.category.slug, 'slug': featuredpost.slug}) }}">{{ featuredpost.title }}</a>
             </h5>
             <p class="card-text mb-auto">{{ featuredpost.extract | slice(0.120)  }}</p>
-            <a href="#">Seguir leyendo →</a>
+            <a href="{{ path('post', {'categorySlug': featuredpost.category.slug, 'slug': featuredpost.slug}) }}">Seguir leyendo →</a>
         </div>
         <img class="card-img-right flex-auto d-none d-md-block" data-src="http://placehold.it/750x300?theme=thumb" alt="Thumbnail [200x250]" style="width: 200px; height: 250px;" src="http://placehold.it/750x300" data-holder-rendered="true">
     </div>
