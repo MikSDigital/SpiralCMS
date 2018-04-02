@@ -1,6 +1,20 @@
 {% extends 'frontend/toroide/base.html.twig' %}
 
-{% block title %}{{ post.title }}{% endblock %}
+{% block metadata %}
+    {{ get_metadata('{
+            "@context": "http://schema.org",
+            "@type": "WebPage",
+            "name": "Lecture 12: Graphs, networks, incidence matrices",
+            "alternateName": "Lecture 12: Graphs, networks, incidence matrices",
+            "description": "These video lectures of Professor Gilbert Strang teaching 18.06 were recorded in Fall 1999 and do not correspond precisely to the current  edition of the textbook.",
+
+            "publisher": {
+                "@type": "CollegeOrUniversity",
+                "name": "MIT OpenCourseWare"
+            },
+            "license": "http://creativecommons.org/licenses/by-nc-sa/3.0/us/deed.en_US"
+        }') }}
+{% endblock %}
 
 {% block container %}
     <div class="container">
@@ -13,13 +27,10 @@
                 <div class="col-md-8 spiralcms-blogentries-content">
                     {{ include('frontend/toroide/partials/post/content.html.twig') }}
 
-                    <!-- Share this -->
                     {{ include('frontend/toroide/partials/post/share.html.twig') }}
 
-                    <!-- Related posts -->
                     {{ include('frontend/toroide/partials/post/related.html.twig') }}
 
-                    <!-- Author -->
                     {{ include('frontend/toroide/partials/post/author.html.twig') }}
                 </div>
             {% endblock %}
@@ -29,22 +40,4 @@
             {% endblock %}
         </div>
     </div>
-{% endblock %}
-
-{% block rich_snippets %}
-    <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            "@type": "WebPage",
-            "name": "Lecture 12: Graphs, networks, incidence matrices",
-            "alternateName": "Lecture 12: Graphs, networks, incidence matrices",
-            "description": "These video lectures of Professor Gilbert Strang teaching 18.06 were recorded in Fall 1999 and do not correspond precisely to the current  edition of the textbook.",
-
-            "publisher": {
-                "@type": "CollegeOrUniversity",
-                "name": "MIT OpenCourseWare"
-            },
-            "license": "http://creativecommons.org/licenses/by-nc-sa/3.0/us/deed.en_US"
-        }
-    </script>
 {% endblock %}

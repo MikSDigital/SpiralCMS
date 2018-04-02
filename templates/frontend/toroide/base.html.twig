@@ -3,6 +3,9 @@
         <head>
             <meta charset="UTF-8">
             <title>{% block title %}Welcome!{% endblock %}</title>
+
+            {% block metadata %}{% endblock %}
+
             <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -25,7 +28,6 @@
             {% endblock %}
 
             {% block featured_posts %}
-                <!-- Featured Posts -->
                 <div class="row mb-2">
                     {% for featuredpost in featuredPosts %}
                         {{ include('frontend/toroide/partials/home/featured_post.html.twig') }}
@@ -38,7 +40,6 @@
                 {% block right_sidebar %}
                     <div class="col-md-4 spiralcms-right-bar">
 
-                        <!-- Search Widget -->
                         {{ render(controller( 'App\\Controller\\Frontend\\BlogController::renderSearch')) }}
 
                         <!-- Side Widget -->
