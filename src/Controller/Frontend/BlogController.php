@@ -2,11 +2,14 @@
 
 namespace App\Controller\Frontend;
 
+use App\Entity\Core\Category;
+use App\Entity\Core\Post;
 use App\Form\Type\SearchType;
 use App\Service\Core\CategoryService;
 use App\Service\Core\PostService;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -34,32 +37,10 @@ class BlogController extends Controller
      * @Route("/page/{number}", name="index_page", requirements={"page"="\d+"})
      * @Method({"GET", "POST"})
      */
-    public function index($number = 0)
+    public function getHome($number = 0)
     {
         return $this->render('frontend/toroide/index.html.twig', [
             'posts' => $this->postService->getFiltered(PostService::LIMIT)
-        ]);
-    }
-    /**
-     * @Route("/category/{slug}", name="category")
-     * @Method({"GET"})
-     */
-    public function category($slug)
-    {
-        return $this->render('frontend/toroide/category.html.twig', [
-            'category' => $this->categoryService->getOneBy(['slug' => $slug])
-        ]);
-    }
-
-    /**
-     * @Route("{slug}", name = "post", requirements={"slug" = "^(?!.*(search|category)$).*"}, options = {"expose"=true})
-     * @Route("/post/{slug}", name="post_alias")
-     * @Method({"GET"})
-     */
-    public function post($slug)
-    {
-        return $this->render('frontend/toroide/post.html.twig', [
-            'post' => $this->postService->getOneBy(['slug' => $slug])
         ]);
     }
 
@@ -82,13 +63,40 @@ class BlogController extends Controller
     }
 
     /**
+     * @Route("/{categorySlug}", name="category", requirements={"slug" = "^(?!.*(search)$).*"}, options = {"expose"=true})
+     * @Method({"GET"})
+     */
+    public function getCategory($categorySlug)
+    {
+        return $this->render('frontend/toroide/category.html.twig', [
+            'category' => $this->categoryService->getOneBy(['slug' => $categorySlug])
+        ]);
+    }
+
+    /**
+     * @Route("/{categorySlug}/{slug}", name="post")
+     * @Method({"GET"})
+     */
+    public function getPost($categorySlug, $slug)
+    {
+        $category = $this->categoryService->getOneBy(['slug' => $categorySlug]);
+        if(!$category instanceof Category) {
+            throw new NotFoundHttpException();
+        }
+
+        return $this->render('frontend/toroide/post.html.twig', [
+            'post' => $this->postService->getOneBy(['slug' => $slug, 'category' => $category])
+        ]);
+    }
+
+    /**
      * @param Request $request
      * @return mixed
      */
     public function renderSearch(Request $request)
     {
         $form = $this->getSearchForm();
-        return $this->render('frontend/toroide/partials/search_form.html.twig', [
+        return $this->render('frontend/toroide/partials/search/form.html.twig', [
             'form' => $form->createView(),
         ]);
     }

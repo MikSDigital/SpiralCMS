@@ -6,7 +6,7 @@
         <ul class="navbar-nav mr-auto spiral-col-center">
             {% for category in categories %}
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('category', {'slug': category.slug}) }}">{{ category.title }}</a>
+                    <a class="nav-link" href="{{ path('category', {'categorySlug': category.slug}) }}">{{ category.title }}</a>
                 </li>
             {% endfor %}
         </ul>

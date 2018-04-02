@@ -1,0 +1,12 @@
+<div class="card mb-4 spiral-card">
+    <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+    <div class="card-body">
+        <h2 class="card-title spiral-card-title">{{ post.title }}</h2>
+        <small class="spiral-card-posted">Posted on {{ post.createdAt | date("F jS \\a\\t g:ia") }} by <a href="#">{{ post.author.name }}</a> on <a href="#">{{ post.category.title }}</a></small>
+
+        <!-- Tags -->
+        {{ include('frontend/toroide/partials/post/tags.html.twig') }}
+
+        <p class="card-text spiral-post-card-text">{{ post.body | raw }}</p>
+    </div>
+</div>

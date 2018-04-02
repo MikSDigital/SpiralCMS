@@ -11,9 +11,9 @@
                         <div class="card spiral-card index-spiral-card">
                             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
                             <div class="card-body">
-                                <h2 class="card-title"><a class="spiral-index-card-title-link" href="{{ path('post', {'slug': post.slug}) }}">{{ post.title }}</a></h2>
+                                <h2 class="card-title"><a class="spiral-index-card-title-link" href="{{ path('post', {'categorySlug': post.category.slug, 'slug': post.slug}) }}">{{ post.title }}</a></h2>
                                 <p class="card-text">{{ post.extract }}</p>
-                                <a href="{{ path('post', {'slug': post.slug}) }}" class="btn btn-primary">Read More →</a>
+                                <a href="{{ path('post', {'categorySlug': post.category.slug, 'slug': post.slug}) }}" class="btn btn-primary">Read More →</a>
                             </div>
                         </div>
                     {% endfor %}

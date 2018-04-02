@@ -1,6 +1,6 @@
 {% extends 'frontend/toroide/base.html.twig' %}
 
-{% block title %}Hello {% endblock %}
+{% block title %}{{ post.title }}{% endblock %}
 
 {% block container %}
     <div class="container">
@@ -11,54 +11,19 @@
 
             {% block content %}
                 <div class="col-md-8 spiralcms-blogentries-content">
-                    <div class="card mb-4 spiral-card">
-                        <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-                        <div class="card-body">
-                            <h2 class="card-title spiral-card-title">{{ post.title }}</h2>
-                            <small class="spiral-card-posted">Posted on {{ post.createdAt | date("F jS \\a\\t g:ia") }} by <a href="#">{{ post.author.name }}</a> on <a href="#">{{ post.category.title }}</a></small>
-                            <p class="card-text spiral-post-card-text">{{ post.body }}</p>
-                        </div>
-                    </div>
+                    {{ include('frontend/toroide/partials/post/content.html.twig') }}
 
                     <!-- Share this -->
-                    <hr>
-                    <div class="card mb-4 spiral-card">
-                        <div class="card-body spiral-social-links spiral-col-center">
-                            <a href="#" class="fa fa-facebook spiral-share-button"></a>
-                            <a href="#" class="fa fa-twitter spiral-share-button"></a>
-                            <a href="#" class="fa fa-linkedin spiral-share-button"></a>
-                        </div>
-                    </div>
-
+                    {{ include('frontend/toroide/partials/post/share.html.twig') }}
 
                     <!-- Related posts -->
-                    <div class="card mb-4 spiral-card">
-                        <div class="card-body">
-                            <h2 class="card-title spiral-card-title">Related posts</h2>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-4">Uno</div>
-                                <div class="col-md-4">Dos</div>
-                                <div class="col-md-4">Tres</div>
-                            </div>
-                        </div>
-                    </div>
+                    {{ include('frontend/toroide/partials/post/related.html.twig') }}
 
                     <!-- Author -->
-                    <div class="card mb-4 spiral-card">
-                        <div class="card-body">
-                            <h2 class="card-title spiral-card-title">Author</h2>
-                            <hr>
-                        </div>
-                    </div>
-
-
-
-
-
-
+                    {{ include('frontend/toroide/partials/post/author.html.twig') }}
                 </div>
             {% endblock %}
+
             {% block right_sidebar %}
                 {{ parent() }}
             {% endblock %}
