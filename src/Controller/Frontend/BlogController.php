@@ -50,7 +50,7 @@ class BlogController extends Controller
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function search(Request $request)
+    public function getSearch(Request $request)
     {
         $form = $this->getSearchForm();
         $form->handleRequest($request);
@@ -68,8 +68,16 @@ class BlogController extends Controller
      */
     public function getCategory($categorySlug)
     {
+        $category = $this->categoryService->getOneBy(['slug' => $categorySlug]);
+        if(!$category instanceof Category) {
+            throw new NotFoundHttpException();
+        }
+
+        $posts = $this->postService->getBy(['category' => $category]);
+
         return $this->render('frontend/toroide/category.html.twig', [
-            'category' => $this->categoryService->getOneBy(['slug' => $categorySlug])
+            'category' => $category,
+            'posts' => $posts
         ]);
     }
 

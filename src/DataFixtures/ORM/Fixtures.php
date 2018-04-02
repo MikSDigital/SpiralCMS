@@ -154,7 +154,7 @@ Una vez le des al botón de <em>Run</em> verás el enlace en funcionamiento en e
         $post->setAuthor($author);
         $post->setStatus(1);
         $post->setExtract('Vengo otra vez con otro artículo rapidito de linkbuilding, de esos que utilizo para sacarme una publicación de la manga y mantener así el ');
-        $post->setCategory($otros);
+        $post->setCategory($seo);
         $manager->persist($post);
 
         $manager->flush();

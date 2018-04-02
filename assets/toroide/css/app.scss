@@ -6,6 +6,8 @@ $cinco-percent: 5%;
 $dos-percent: 2%;
 
 a { color: #ff0099; }
+a:hover { color: #ff0099; text-decoration: underline; }
+
 body {     color: #484848; }
 
 .spiralcms-blogentries-content {
@@ -36,6 +38,11 @@ body {     color: #484848; }
 
 .spiral-post-card-text {
   margin-top:5%;
+}
+
+.spiral-post-list-card-text {
+  margin-top:0%;
+  margin-bottom: 1px;
 }
 
 .spiral-card-title {
@@ -203,4 +210,16 @@ body {     color: #484848; }
   border-radius: 50%;
   background-color: #00fdb1;
   color: white;
+}
+
+.spiral-post-card-title a{
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  color: #292929;
+}
+
+.spiral-post-card-title a:hover {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  color: #ff0099;
+  text-decoration: none;
+  background: #2d2d2d;
 }

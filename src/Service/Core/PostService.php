@@ -56,4 +56,12 @@ class PostService
     {
         return $this->repository->findAll();
     }
+
+    /**
+     * @return array
+     */
+    public function getBy($args)
+    {
+        return $this->repository->findBy($args);
+    }
 }
