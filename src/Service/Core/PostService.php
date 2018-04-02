@@ -5,6 +5,9 @@ namespace App\Service\Core;
 
 use App\Entity\Core\Post;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Knp\Component\Pager\Paginator;
+use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\Request;
 
 
 class PostService
@@ -23,8 +26,9 @@ class PostService
     /**
      * PostService constructor.
      * @param ManagerRegistry $doctrine
+     * @param PaginatorInterface $paginator
      */
-    public function __construct(ManagerRegistry $doctrine)
+    public function __construct(ManagerRegistry $doctrine, PaginatorInterface $paginator)
     {
         $this->doctrine = $doctrine;
         $this->manager = $doctrine->getManager();
@@ -57,6 +61,11 @@ class PostService
         return $this->repository->findAll();
     }
 
+    public function getAllQuery()
+    {
+        return $this->repository->findAllQuery();
+    }
+
     /**
      * @return array
      */
@@ -72,5 +81,26 @@ class PostService
     public function getLikeTitle($args)
     {
         return $this->repository->findLikeTitle($args);
+    }
+
+    /**
+     * @param $posts
+     * @return array
+     */
+    public function getFeaturedPosts($posts)
+    {
+        return [
+            $this->getRandomPost($posts),
+            $this->getRandomPost($posts),
+        ];
+    }
+
+    /**
+     * @param $posts
+     * @return mixed
+     */
+    public function getRandomPost($posts)
+    {
+        return $posts[rand(0, sizeof($posts)-1)];
     }
 }

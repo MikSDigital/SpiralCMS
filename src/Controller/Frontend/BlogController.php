@@ -5,6 +5,7 @@ namespace App\Controller\Frontend;
 use App\Entity\Core\Category;
 use App\Entity\Core\Post;
 use App\Form\Type\SearchType;
+use App\Library\Decorators\PostDecorator;
 use App\Service\Core\CategoryService;
 use App\Service\Core\PostService;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -22,33 +23,36 @@ class BlogController extends Controller
     /** @var  CategoryService $categoryService */
     private $categoryService;
 
+    private $postDecorator;
+
     /**
      * BlogController constructor.
      * @param PostService $postService
+     * @param PostDecorator $postDecorator
+     * @param CategoryService $categoryService
      */
-    public function __construct(PostService $postService, CategoryService $categoryService)
+    public function __construct(PostService $postService, PostDecorator $postDecorator, CategoryService $categoryService)
     {
         $this->postService = $postService;
         $this->categoryService = $categoryService;
+        $this->postDecorator = $postDecorator;
     }
 
     /**
      * @Route("/", name="index")
-     * @Route("/page/{number}", name="index_page", requirements={"page"="\d+"})
+     * @Route("/page/{page}", name="index_listing", requirements={"page"="\d+"})
      * @Method({"GET", "POST"})
+     * @param Request $request
+     * @param int $page
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function getHome($number = 0)
+    public function getHome(Request $request, $page = 0)
     {
-        $posts = $this->postService->getFiltered(PostService::LIMIT);
-
-        $featuredPosts = [
-            $posts[rand(0,5)],
-            $posts[rand(0,5)]
-        ];
+        $posts = $this->postDecorator->getAllPostsPaginated($request, 'index_listing', $page);
 
         return $this->render('frontend/toroide/index.html.twig', [
             'posts' => $posts,
-            'featuredPosts' => $featuredPosts,
+            'featuredPosts' => $this->postService->getFeaturedPosts($posts),
         ]);
     }
 
@@ -80,7 +84,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/{categorySlug}", name="category", requirements={"slug" = "^(?!.*(search)$).*"}, options = {"expose"=true})
+     * @Route("/{categorySlug}", name="category", requirements={"slug" = "^(?!.*(search|listing)$).*"}, options = {"expose"=true})
      * @Method({"GET"})
      */
     public function getCategory($categorySlug)
@@ -113,6 +117,8 @@ class BlogController extends Controller
             'post' => $this->postService->getOneBy(['slug' => $slug, 'category' => $category])
         ]);
     }
+
+
 
     /**
      * @param Request $request

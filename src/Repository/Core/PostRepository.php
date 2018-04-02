@@ -39,6 +39,16 @@ class PostRepository extends ServiceEntityRepository
     }
 
     /**
+     * @return mixed
+     */
+    public function findAllQuery()
+    {
+        $query = $this->createQueryBuilder('p');
+
+        return $query->getQuery();
+    }
+
+    /**
      * @param $title
      * @return mixed
      */
