@@ -53,7 +53,7 @@ class Post
     private $author;
 
     /**
-     * @ORM\Column(type="string", length=512, unique=true, name="post_extract")
+     * @ORM\Column(type="string", length=512, unique=false, name="post_extract")
      */
     private $extract;
 
