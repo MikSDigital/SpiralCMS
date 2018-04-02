@@ -38,6 +38,19 @@ class PostRepository extends ServiceEntityRepository
         return $query->getQuery()->getResult();
     }
 
+    /**
+     * @param $title
+     * @return mixed
+     */
+    public function findLikeTitle($title)
+    {
+        $query = $this->createQueryBuilder('p')
+            ->where('p.title LIKE :title')
+            ->setParameter('title', '%' . $title . '%');
+
+        return $query->getQuery()->getResult();
+    }
+
 
 //    /**
 //     * @return Post[] Returns an array of Post objects

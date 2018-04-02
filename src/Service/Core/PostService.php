@@ -64,4 +64,13 @@ class PostService
     {
         return $this->repository->findBy($args);
     }
+
+    /**
+     * @param $args
+     * @return mixed
+     */
+    public function getLikeTitle($args)
+    {
+        return $this->repository->findLikeTitle($args);
+    }
 }

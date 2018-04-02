@@ -55,9 +55,18 @@ class BlogController extends Controller
         $form = $this->getSearchForm();
         $form->handleRequest($request);
 
+        $searchInput = $request->query->get('s');
+        if(!$searchInput) {
+            throw new NotFoundHttpException();
+        }
+
+        $posts = $this->postService->getLikeTitle($searchInput);
+
         if($form->isSubmitted() && $form->isValid()) {
             return $this->render('frontend/toroide/search.html.twig', [
-                'post' => $this->postService->getOneBy(['slug' => $request->query->get('s')])
+                'posts' => $posts,
+                'searchInput' => $searchInput,
+                'count' => count($posts),
             ]);
         }
     }
