@@ -3,14 +3,16 @@
 @import '~startbootstrap-blog-home/vendor/bootstrap/css/bootstrap-reboot.css';
 
 $cinco-percent: 5%;
+$dos-percent: 2%;
 
+a { color: #ff0099; }
 
 .spiralcms-blogentries-content {
-  margin-top: $cinco-percent;
+  margin-top: $dos-percent;
 }
 
 .spiralcms-right-bar {
-  margin-top: $cinco-percent;
+  margin-top: $dos-percent;;
 }
 
 .spiral-col-center {
@@ -29,4 +31,62 @@ $cinco-percent: 5%;
 
 .spiral-card {
   border: 0px;
+}
+
+.spiral-post-card-text {
+  margin-top:5%;
+}
+
+.spiral-card-title {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+.spiral-card-posted {
+  font-size: 70%;
+  color: #999999;
+}
+
+.spiral-index-card-title-link{
+  color:black;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+.index-spiral-card {
+  margin-bottom: 10%;
+}
+
+.spiral-jumbotron {
+  margin-top:2%;
+}
+
+.spiral-navigator {
+  background-color: white !important;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 15px;
+  width: 55px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
 }

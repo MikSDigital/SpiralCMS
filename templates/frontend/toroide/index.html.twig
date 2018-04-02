@@ -8,16 +8,12 @@
             {% block content %}
                 <div class="col-md-8 spiralcms-blogentries-content">
                     {% for post in posts %}
-                        <div class="card mb-4">
+                        <div class="card spiral-card index-spiral-card">
                             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
                             <div class="card-body">
-                                <h2 class="card-title"><a href="{{ path('post', {'slug': post.slug}) }}">{{ post.title }}</a></h2>
+                                <h2 class="card-title"><a class="spiral-index-card-title-link" href="{{ path('post', {'slug': post.slug}) }}">{{ post.title }}</a></h2>
                                 <p class="card-text">{{ post.extract }}</p>
                                 <a href="{{ path('post', {'slug': post.slug}) }}" class="btn btn-primary">Read More →</a>
-                            </div>
-                            <div class="card-footer text-muted">
-                                Posted on {{ post.createdAt | date("F jS \\a\\t g:ia") }} by
-                                <a href="#">{{ post.author.name }}</a>
                             </div>
                         </div>
                     {% endfor %}
