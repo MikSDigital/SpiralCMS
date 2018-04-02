@@ -39,8 +39,16 @@ class BlogController extends Controller
      */
     public function getHome($number = 0)
     {
+        $posts = $this->postService->getFiltered(PostService::LIMIT);
+
+        $featuredPosts = [
+            $posts[rand(0,5)],
+            $posts[rand(0,5)]
+        ];
+
         return $this->render('frontend/toroide/index.html.twig', [
-            'posts' => $this->postService->getFiltered(PostService::LIMIT)
+            'posts' => $posts,
+            'featuredPosts' => $featuredPosts,
         ]);
     }
 

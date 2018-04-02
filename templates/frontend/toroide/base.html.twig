@@ -21,11 +21,16 @@
             {% endblock %}
 
             {% block jumbotron %}
-                {{ include('frontend/toroide/partials/home/jumbotron.html.twig') }}
+                {#{{ include('frontend/toroide/partials/home/jumbotron.html.twig') }}#}
             {% endblock %}
 
             {% block featured_posts %}
-                {{ include('frontend/toroide/partials/home/featured_post.html.twig') }}
+                <!-- Featured Posts -->
+                <div class="row mb-2">
+                    {% for featuredpost in featuredPosts %}
+                        {{ include('frontend/toroide/partials/home/featured_post.html.twig') }}
+                    {% endfor %}
+                </div>
             {% endblock %}
 
             {% block container %}
