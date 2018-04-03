@@ -40,8 +40,8 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/", name="index")
-     * @Route("/page/{page}", name="index_listing", requirements={"page"="\d+"})
+     * @Route("/", name="spiral_front_index")
+     * @Route("/page/{page}", name="spiral_front_index_listing", requirements={"page"="\d+"})
      * @Method({"GET", "POST"})
      * @param Request $request
      * @param int $page
@@ -49,7 +49,7 @@ class BlogController extends Controller
      */
     public function getHome(Request $request, $page = 0)
     {
-        $posts = $this->postDecorator->getAllPostsPaginated($request, 'index_listing', $page);
+        $posts = $this->postDecorator->getAllPostsPaginated($request, 'spiral_front_index_listing', $page);
 
         return $this->render('frontend/toroide/index.html.twig', [
             'posts' => $posts,
@@ -58,7 +58,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/search", name="search")
+     * @Route("/search", name="spiral_front_search")
      * @Method({"GET"})
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
@@ -85,7 +85,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/whoami", name="whoami")
+     * @Route("/whoami", name="spiral_front_whoami")
      * @Method({"GET"})
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
@@ -96,7 +96,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/{categorySlug}", name="category", requirements={"slug" = "^(?!.*(search|listing)$).*"}, options = {"expose"=true})
+     * @Route("/{categorySlug}", name="spiral_front_category", requirements={"slug" = "^(?!.*(search|listing)$).*"}, options = {"expose"=true})
      * @Method({"GET"})
      * @param $categorySlug
      * @return \Symfony\Component\HttpFoundation\Response
@@ -117,7 +117,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/{categorySlug}/{slug}", name="post")
+     * @Route("/{categorySlug}/{slug}", name="spiral_front_post")
      * @Method({"GET"})
      * @param $categorySlug
      * @param $slug
@@ -163,7 +163,7 @@ class BlogController extends Controller
     private function getSearchForm()
     {
         return $this->get('form.factory')->createNamed(null, SearchType::class, null, [
-            'action' => $this->generateUrl('search'),
+            'action' => $this->generateUrl('spiral_front_search'),
             'method' => 'GET'
         ]);
     }
