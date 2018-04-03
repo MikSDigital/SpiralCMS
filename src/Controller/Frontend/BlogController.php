@@ -23,6 +23,7 @@ class BlogController extends Controller
     /** @var  CategoryService $categoryService */
     private $categoryService;
 
+    /** @var PostDecorator $postDecorator */
     private $postDecorator;
 
     /**
@@ -84,8 +85,21 @@ class BlogController extends Controller
     }
 
     /**
+     * @Route("/whoami", name="whoami")
+     * @Method({"GET"})
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function getWhoami(Request $request)
+    {
+        return $this->render('frontend/toroide/author.html.twig');
+    }
+
+    /**
      * @Route("/{categorySlug}", name="category", requirements={"slug" = "^(?!.*(search|listing)$).*"}, options = {"expose"=true})
      * @Method({"GET"})
+     * @param $categorySlug
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function getCategory($categorySlug)
     {
@@ -105,6 +119,9 @@ class BlogController extends Controller
     /**
      * @Route("/{categorySlug}/{slug}", name="post")
      * @Method({"GET"})
+     * @param $categorySlug
+     * @param $slug
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function getPost($categorySlug, $slug)
     {
@@ -118,25 +135,22 @@ class BlogController extends Controller
         ]);
     }
 
-
-
     /**
-     * @param Request $request
      * @return mixed
      */
-    public function renderSearch(Request $request)
+    public function renderSearch()
     {
         $form = $this->getSearchForm();
+
         return $this->render('frontend/toroide/partials/search/form.html.twig', [
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * @param Request $request
      * @return mixed
      */
-    public function renderNavigator(Request $request)
+    public function renderNavigator()
     {
         return $this->render('frontend/toroide/partials/navigator.html.twig', [
             'categories' => $this->categoryService->getAll(),

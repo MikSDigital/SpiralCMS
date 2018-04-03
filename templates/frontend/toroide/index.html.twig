@@ -2,16 +2,28 @@
 
 {% block metadata %}
     {{ get_metadata('{
-            "@context": "http://schema.org",
-            "@type": "WebPage",
-            "name": "Lecture 12: Graphs, networks, incidence matrices",
-            "alternateName": "Lecture 12: Graphs, networks, incidence matrices",
+            "title": "Whoami",
             "description": "These video lectures of Professor Gilbert Strang teaching 18.06 were recorded in Fall 1999 and do not correspond precisely to the current  edition of the textbook.",
-            "publisher": {
-                "@type": "CollegeOrUniversity",
-                "name": "MIT OpenCourseWare"
+            "ldjson": {
+                "@context": "http://schema.org",
+                "@type": "WebPage",
+                "name": "Lecture 12: Graphs, networks, incidence matrices",
+                "alternateName": "Lecture 12: Graphs, networks, incidence matrices",
+                "description": "These video lectures of Professor Gilbert Strang teaching 18.06 were recorded in Fall 1999 and do not correspond precisely to the current  edition of the textbook.",
+                "publisher": {
+                    "@type": "CollegeOrUniversity",
+                    "name": "MIT OpenCourseWare"
+                },
+                "license": "http://creativecommons.org/licenses/by-nc-sa/3.0/us/deed.en_US"
             },
-            "license": "http://creativecommons.org/licenses/by-nc-sa/3.0/us/deed.en_US"
+            "og": {
+                "site_name": "ASD",
+                "title": "ASD",
+                "url": "ASD",
+                "type": "blog",
+                "description": "ASD",
+                "image": "ASD"
+            }
         }') }}
 {% endblock %}
 

@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27022a72-d521-432f-b338-ce0674db327c" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/packages/twig_extensions.yaml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Library/Extension/TwigExtension.php" />
-      <change beforePath="$PROJECT_DIR$/.idea/SpiralCMS.iml" afterPath="$PROJECT_DIR$/.idea/SpiralCMS.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/frontend/toroide/author.html.twig" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" afterPath="$PROJECT_DIR$/symfony.lock" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Frontend/BlogController.php" afterPath="$PROJECT_DIR$/src/Controller/Frontend/BlogController.php" />
+      <change beforePath="$PROJECT_DIR$/src/Library/Extension/TwigExtension.php" afterPath="$PROJECT_DIR$/src/Library/Extension/TwigExtension.php" />
       <change beforePath="$PROJECT_DIR$/templates/frontend/toroide/base.html.twig" afterPath="$PROJECT_DIR$/templates/frontend/toroide/base.html.twig" />
       <change beforePath="$PROJECT_DIR$/templates/frontend/toroide/category.html.twig" afterPath="$PROJECT_DIR$/templates/frontend/toroide/category.html.twig" />
       <change beforePath="$PROJECT_DIR$/templates/frontend/toroide/index.html.twig" afterPath="$PROJECT_DIR$/templates/frontend/toroide/index.html.twig" />
-      <change beforePath="$PROJECT_DIR$/templates/frontend/toroide/list.html.twig" afterPath="" />
       <change beforePath="$PROJECT_DIR$/templates/frontend/toroide/post.html.twig" afterPath="$PROJECT_DIR$/templates/frontend/toroide/post.html.twig" />
       <change beforePath="$PROJECT_DIR$/templates/frontend/toroide/search.html.twig" afterPath="$PROJECT_DIR$/templates/frontend/toroide/search.html.twig" />
     </list>
@@ -36,11 +31,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <caret line="26" column="10" lean-forward="false" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlogController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Frontend/BlogController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2">
+              <caret line="70" column="40" lean-forward="false" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -49,28 +54,28 @@
       <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="38" lean-forward="false" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+            <state relative-caret-position="45">
+              <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="post.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/post.html.twig">
+      <file leaf-file-name="author.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/author.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="395">
+              <caret line="27" column="14" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="27" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/search.html.twig">
+      <file leaf-file-name="TwigExtension.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Library/Extension/TwigExtension.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="19" column="27" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+            <state relative-caret-position="285">
+              <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -79,8 +84,28 @@
       <file leaf-file-name="category.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/category.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="26" column="68" lean-forward="false" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
+            <state relative-caret-position="405">
+              <caret line="27" column="14" lean-forward="false" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="post.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/post.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" column="14" lean-forward="false" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/search.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="27" column="14" lean-forward="false" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -142,7 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/toroide/js/app.js" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/src/Entity/Core/Blog.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -185,14 +209,15 @@
         <option value="$PROJECT_DIR$/config/packages/knp_paginator.yaml" />
         <option value="$PROJECT_DIR$/src/Service/Core/PostService.php" />
         <option value="$PROJECT_DIR$/src/Library/Decorators/PostDecorator.php" />
-        <option value="$PROJECT_DIR$/src/Controller/Frontend/BlogController.php" />
-        <option value="$PROJECT_DIR$/src/Library/Extension/TwigExtension.php" />
-        <option value="$PROJECT_DIR$/templates/frontend/toroide/search.html.twig" />
         <option value="$PROJECT_DIR$/templates/frontend/toroide/list.html.twig" />
-        <option value="$PROJECT_DIR$/templates/frontend/toroide/category.html.twig" />
-        <option value="$PROJECT_DIR$/templates/frontend/toroide/index.html.twig" />
-        <option value="$PROJECT_DIR$/templates/frontend/toroide/post.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/Frontend/BlogController.php" />
         <option value="$PROJECT_DIR$/templates/frontend/toroide/base.html.twig" />
+        <option value="$PROJECT_DIR$/templates/frontend/toroide/author.html.twig" />
+        <option value="$PROJECT_DIR$/templates/frontend/toroide/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Library/Extension/TwigExtension.php" />
+        <option value="$PROJECT_DIR$/templates/frontend/toroide/category.html.twig" />
+        <option value="$PROJECT_DIR$/templates/frontend/toroide/post.html.twig" />
+        <option value="$PROJECT_DIR$/templates/frontend/toroide/search.html.twig" />
       </list>
     </option>
   </component>
@@ -313,13 +338,38 @@
             <path>
               <item name="SpiralCMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="SpiralCMS" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SpiralCMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpiralCMS" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="SpiralCMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="SpiralCMS" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SpiralCMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpiralCMS" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SpiralCMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpiralCMS" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Library" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SpiralCMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpiralCMS" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Library" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Extension" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="SpiralCMS" type="b2602c69:ProjectViewProjectNode" />
@@ -453,12 +503,12 @@
       <workItem from="1522526945144" duration="25750000" />
       <workItem from="1522617484028" duration="4717000" />
       <workItem from="1522666798379" duration="8712000" />
-      <workItem from="1522686733978" duration="22132000" />
+      <workItem from="1522686733978" duration="24650000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64744000" />
+    <option name="totallyTimeSpent" value="67262000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -471,9 +521,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="824" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21805556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21805556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959327" sideWeight="0.49714285" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959327" sideWeight="0.50285715" order="9" side_tool="true" content_ui="tabs" />
@@ -514,7 +563,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/form/FormBuilderInterface.php" />
     <entry file="file://$PROJECT_DIR$/vendor/symfony/form/FormInterface.php" />
     <entry file="file://$PROJECT_DIR$/vendor/symfony/form/AbstractType.php" />
     <entry file="file://$PROJECT_DIR$/src/Form/Type/SearchType.php">
@@ -813,14 +861,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Frontend/BlogController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Library/Decorators/PostDecorator.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -845,14 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Library/Extension/TwigExtension.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/list.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-43">
@@ -861,34 +893,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/search.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Controller/Frontend/BlogController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="19" column="27" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+        <state relative-caret-position="-2">
+          <caret line="70" column="40" lean-forward="false" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/post.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Library/Extension/TwigExtension.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="285">
+          <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/category.html.twig">
+    <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/author.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="26" column="68" lean-forward="false" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
+        <state relative-caret-position="395">
+          <caret line="27" column="14" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="27" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="38" lean-forward="false" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+        <state relative-caret-position="45">
+          <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/category.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="14" lean-forward="false" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -896,7 +936,23 @@
     <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <caret line="26" column="10" lean-forward="false" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/post.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="14" lean-forward="false" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/search.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="27" column="14" lean-forward="false" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
           <folding />
         </state>
       </provider>
