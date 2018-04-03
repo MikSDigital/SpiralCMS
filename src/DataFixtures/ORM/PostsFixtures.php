@@ -31,6 +31,7 @@ class PostsFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $this->createPostsData([
+            'author' => $this->createAuthor(),
             'categories' => [
                 'desarrollo' => $this->createCategory('Desarrollo','desarrollo'),
                 'seo' => $this->createCategory('SEO','seo'),
@@ -49,13 +50,13 @@ class PostsFixtures extends Fixture
      * @param $category
      * @return array
      */
-    private function createPostArray($title, $slug, $category)
+    private function createPostArray($title, $slug, $category, $author)
     {
         return [
             'title' => $title,
             'slug' => $slug,
             'category' => $category,
-            'author' => $this->createAuthor(),
+            'author' => $author,
         ];
     }
 
@@ -65,17 +66,17 @@ class PostsFixtures extends Fixture
     private function createPostsData(array $data)
     {
         $this->createPostsFromArray([
-            $this->createPostArray('1 - Cómo hacer una API REST con Node.js', 'hacer-una-api-rest-con-node-js', $data['categories']['seo']),
-            $this->createPostArray('2 - Hacer un vhost en un Nginx sobre Vagrant', 'thacer-un-vhost-en-nginx-sobre-vagrnt', $data['categories']['seo']),
-            $this->createPostArray('3 - Aprende a utilizar mongodb en node js como un PRO', 'aprende-utilizar-mongodb-en-node-js', $data['categories']['seo']),
-            $this->createPostArray('4 - Entendiendo el funcionamiento del protocolo HTTP', 'entendiendo-protocolo-http', $data['categories']['seo']),
-            $this->createPostArray('5 - Enlace estático en tiempo de ejecución en la programación orientada a objetos', 'enlace-estatico-en-tiempo-de-ejecucion', $data['categories']['seo']),
-            $this->createPostArray('6 - Mi top five de herramientas de programación', 'mi-top-five-de-herramientas-de-programacion', $data['categories']['seo']),
-            $this->createPostArray('7 - Sobrecarga en la programación orientada a objetos', 'sobrecarga-en-la-programacion', $data['categories']['seo']),
-            $this->createPostArray('8 - Cuando Donald Trump se fue de putas en la cama de los Obama', 'cuando-donald-trump-se-fue-de-putas', $data['categories']['seo']),
-            $this->createPostArray('9 - El día que forocoches troleó a un gran partido político', 'cuando-forocoches-troleo-al-psoe', $data['categories']['seo']),
-            $this->createPostArray('10 - Otro post mas', 'otro-post-mas', $data['categories']['seo']),
-            $this->createPostArray('11 - Walk Otro post mas', ' Walk otro-post-mas', $data['categories']['seo']),
+            $this->createPostArray('1 - Cómo hacer una API REST con Node.js', 'hacer-una-api-rest-con-node-js', $data['categories']['seo'], $data['author']),
+            $this->createPostArray('2 - Hacer un vhost en un Nginx sobre Vagrant', 'thacer-un-vhost-en-nginx-sobre-vagrnt', $data['categories']['seo'], $data['author']),
+            $this->createPostArray('3 - Aprende a utilizar mongodb en node js como un PRO', 'aprende-utilizar-mongodb-en-node-js', $data['categories']['seo'], $data['author']),
+            $this->createPostArray('4 - Entendiendo el funcionamiento del protocolo HTTP', 'entendiendo-protocolo-http', $data['categories']['seo'], $data['author']),
+            $this->createPostArray('5 - Enlace estático en tiempo de ejecución en la programación orientada a objetos', 'enlace-estatico-en-tiempo-de-ejecucion', $data['categories']['seo'], $data['author']),
+            $this->createPostArray('6 - Mi top five de herramientas de programación', 'mi-top-five-de-herramientas-de-programacion', $data['categories']['seo'], $data['author']),
+            $this->createPostArray('7 - Sobrecarga en la programación orientada a objetos', 'sobrecarga-en-la-programacion', $data['categories']['seo'], $data['author']),
+            $this->createPostArray('8 - Cuando Donald Trump se fue de putas en la cama de los Obama', 'cuando-donald-trump-se-fue-de-putas', $data['categories']['seo'], $data['author']),
+            $this->createPostArray('9 - El día que forocoches troleó a un gran partido político', 'cuando-forocoches-troleo-al-psoe', $data['categories']['seo'], $data['author']),
+            $this->createPostArray('10 - Otro post mas', 'otro-post-mas', $data['categories']['seo'], $data['author']),
+            $this->createPostArray('11 - Walk Otro post mas', ' Walk otro-post-mas', $data['categories']['seo'], $data['author']),
         ]);
     }
 
@@ -123,7 +124,7 @@ class PostsFixtures extends Fixture
      * @param $args
      * @return Post
      */
-    private function createPost( array $args)
+    private function createPost(array $args)
     {
 
         $body = 'Lorem fistrum apetecan elit voluptate ese que llega. Qui diodenoo ese hombree ut ad. Ese hombree magna hasta luego Lucas apetecan al ataquerl aliqua. Jarl no puedor al ataquerl velit laboris laboris et me cago en tus muelas no te digo trigo por no llamarte Rodrigor. Ut torpedo te voy a borrar el cerito qui et qué dise usteer benemeritaar a wan. Ut ese pedazo de veniam pecador jarl ex diodeno esse. Se calle ustée aliquip ese que llega elit va usté muy cargadoo reprehenderit aliquip jarl. Se calle ustée eiusmod la caidita velit papaar papaar amatomaa hasta luego Lucas. Quis ad eiusmod a wan a peich eiusmod aliqua diodenoo veniam quietooor.

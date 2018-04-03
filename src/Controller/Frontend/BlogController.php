@@ -60,12 +60,12 @@ class BlogController extends BaseController
     }
 
     /**
-     * @Route("/README.md", name="spiral_front_readmemd")
+     * @Route("/about/{authorName}", name="spiral_front_about")
      * @Method({"GET"})
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function getWhoami(Request $request)
+    public function getAbout(Request $request, $authorName)
     {
         return $this->render('frontend/toroide/author.html.twig');
     }
