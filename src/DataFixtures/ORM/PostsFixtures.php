@@ -22,83 +22,20 @@ class PostsFixtures extends Fixture
         $this->manager = $manager;
     }
 
+    /**
+     * @param ObjectManager $manager
+     */
     public function load(ObjectManager $manager)
     {
-        $author = $this->createAuthor();
-
-        $desarrollo = $this->createCategory('Desarrollo','desarrollo');
-        $seo = $this->createCategory('SEO','seo');
-        $blackHat = $this->createCategory('Black Hat','black-hat');
-        $cursos = $this->createCategory('Cursos','cursos');
-        $otros = $this->createCategory('Otros','otros');
-
-        $this->createPostsFromArray([
-            [
-                'title' => 'Cómo hacer una API REST con Node.js',
-                'slug' => 'hacer-una-api-rest-con-node-js',
-                'author' => $author,
-                'category' => $seo
+        $this->createPostsData([
+            'author' => $this->createAuthor(),
+            'categories' => [
+                'desarrollo' => $this->createCategory('Desarrollo','desarrollo'),
+                'seo' => $this->createCategory('SEO','seo'),
+                'blackHat' => $this->createCategory('Black Hat','black-hat'),
+                'cursos' => $this->createCategory('Cursos','cursos'),
+                'otros' => $this->createCategory('Otros','otros')
             ],
-            [
-                'title' => 'Hacer un vhost en un Nginx sobre Vagrant',
-                'slug' => 'thacer-un-vhost-en-nginx-sobre-vagrnt',
-                'author' => $author,
-                'category' => $seo
-            ],
-            [
-                'title' => 'Aprende a utilizar mongodb en node js como un PRO',
-                'slug' => 'aprende-utilizar-mongodb-en-node-js',
-                'author' => $author,
-                'category' => $blackHat
-            ],
-            [
-                'title' => 'Entendiendo el funcionamiento del protocolo HTTP',
-                'slug' => 'entendiendo-protocolo-http',
-                'author' => $author,
-                'category' => $cursos
-            ],
-            [
-                'title' => 'Enlace estático en tiempo de ejecución en la programación orientada a objetos',
-                'slug' => 'enlace-estatico-en-tiempo-de-ejecucion',
-                'author' => $author,
-                'category' => $cursos
-            ],
-            [
-                'title' => 'Mi top five de herramientas de programación',
-                'slug' => 'mi-top-five-de-herramientas-de-programacion',
-                'author' => $author,
-                'category' => $cursos
-            ],
-            [
-                'title' => 'Sobrecarga en la programación orientada a objetos',
-                'slug' => 'sobrecarga-en-la-programacion',
-                'author' => $author,
-                'category' => $desarrollo
-            ],
-            [
-                'title' => 'Cuando Donald Trump se fue de putas en la cama de los Obama',
-                'slug' => 'cuando-donald-trump-se-fue-de-putas',
-                'author' => $author,
-                'category' => $blackHat
-            ],
-            [
-                'title' => 'Un enlace EDU DOFOLLOW en Academia.edu',
-                'slug' => 'enlace-edu-dofollow-en-academia',
-                'author' => $author,
-                'category' => $cursos
-            ],
-            [
-                'title' => 'El día que forocoches troleó a un gran partido político',
-                'slug' => 'cuando-forocoches-troleo-al-psoe',
-                'author' => $author,
-                'category' => $cursos
-            ],
-            [
-                'title' => 'Haciendo magia, enlace en un foro con un DA de 55',
-                'slug' => 'enlace-en-un-foro-con-un-da-de-55',
-                'author' => $author,
-                'category' => $otros
-            ]
         ]);
 
         $manager->flush();
@@ -107,7 +44,82 @@ class PostsFixtures extends Fixture
     /**
      * @param array $data
      */
-    public function createPostsFromArray(array $data)
+    private function createPostsData(array $data)
+    {
+        $this->createPostsFromArray([
+            [
+                'title' => 'Cómo hacer una API REST con Node.js',
+                'slug' => 'hacer-una-api-rest-con-node-js',
+                'author' => $data['author'],
+                'category' => $data['categories']['desarrollo']
+            ],
+            [
+                'title' => 'Hacer un vhost en un Nginx sobre Vagrant',
+                'slug' => 'thacer-un-vhost-en-nginx-sobre-vagrnt',
+                'author' => $data['author'],
+                'category' => $data['categories']['seo']
+            ],
+            [
+                'title' => 'Aprende a utilizar mongodb en node js como un PRO',
+                'slug' => 'aprende-utilizar-mongodb-en-node-js',
+                'author' => $data['author'],
+                'category' => $data['categories']['seo']
+            ],
+            [
+                'title' => 'Entendiendo el funcionamiento del protocolo HTTP',
+                'slug' => 'entendiendo-protocolo-http',
+                'author' => $data['author'],
+                'category' => $data['categories']['blackHat']
+            ],
+            [
+                'title' => 'Enlace estático en tiempo de ejecución en la programación orientada a objetos',
+                'slug' => 'enlace-estatico-en-tiempo-de-ejecucion',
+                'author' => $data['author'],
+                'category' => $data['categories']['cursos']
+            ],
+            [
+                'title' => 'Mi top five de herramientas de programación',
+                'slug' => 'mi-top-five-de-herramientas-de-programacion',
+                'author' => $data['author'],
+                'category' => $data['categories']['cursos']
+            ],
+            [
+                'title' => 'Sobrecarga en la programación orientada a objetos',
+                'slug' => 'sobrecarga-en-la-programacion',
+                'author' => $data['author'],
+                'category' => $data['categories']['desarrollo']
+            ],
+            [
+                'title' => 'Cuando Donald Trump se fue de putas en la cama de los Obama',
+                'slug' => 'cuando-donald-trump-se-fue-de-putas',
+                'author' => $data['author'],
+                'category' => $data['categories']['blackHat']
+            ],
+            [
+                'title' => 'Un enlace EDU DOFOLLOW en Academia.edu',
+                'slug' => 'enlace-edu-dofollow-en-academia',
+                'author' => $data['author'],
+                'category' => $data['categories']['cursos']
+            ],
+            [
+                'title' => 'El día que forocoches troleó a un gran partido político',
+                'slug' => 'cuando-forocoches-troleo-al-psoe',
+                'author' => $data['author'],
+                'category' => $data['categories']['cursos']
+            ],
+            [
+                'title' => 'Haciendo magia, enlace en un foro con un DA de 55',
+                'slug' => 'enlace-en-un-foro-con-un-da-de-55',
+                'author' => $data['author'],
+                'category' => $data['categories']['otros']
+            ]
+        ]);
+    }
+
+    /**
+     * @param array $data
+     */
+    private function createPostsFromArray(array $data)
     {
         foreach ($data as $item) {
             $this->createPost($item);

@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27022a72-d521-432f-b338-ce0674db327c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/Frontend/BaseController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Library/StatusInterface.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Frontend/BlogController.php" afterPath="$PROJECT_DIR$/src/Controller/Frontend/BlogController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DataFixtures/ORM/PostsFixtures.php" afterPath="$PROJECT_DIR$/src/DataFixtures/ORM/PostsFixtures.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/Core/PostRepository.php" afterPath="$PROJECT_DIR$/src/Repository/Core/PostRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Service/Core/PostService.php" afterPath="$PROJECT_DIR$/src/Service/Core/PostService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/frontend/toroide/partials/post/related.html.twig" afterPath="$PROJECT_DIR$/templates/frontend/toroide/partials/post/related.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/frontend/toroide/post.html.twig" afterPath="$PROJECT_DIR$/templates/frontend/toroide/post.html.twig" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,8 +28,8 @@
       <file leaf-file-name="PostsFixtures.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DataFixtures/ORM/PostsFixtures.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+            <state relative-caret-position="1634">
+              <caret line="121" column="4" selection-start-line="121" selection-start-column="4" selection-end-line="121" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -352,6 +345,7 @@
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -456,12 +450,12 @@
       <workItem from="1522666798379" duration="8712000" />
       <workItem from="1522686733978" duration="25507000" />
       <workItem from="1522744804412" duration="2408000" />
-      <workItem from="1522747555127" duration="2815000" />
+      <workItem from="1522747555127" duration="3254000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73342000" />
+    <option name="totallyTimeSpent" value="73781000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -839,8 +833,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DataFixtures/ORM/PostsFixtures.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+        <state relative-caret-position="1634">
+          <caret line="121" column="4" selection-start-line="121" selection-start-column="4" selection-end-line="121" selection-end-column="11" />
           <folding />
         </state>
       </provider>
