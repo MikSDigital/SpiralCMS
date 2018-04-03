@@ -5,9 +5,6 @@ namespace App\Controller\Frontend;
 use App\Entity\Core\Category;
 use App\Entity\Core\Post;
 use App\Form\Type\SearchType;
-use App\Library\Decorators\PostDecorator;
-use App\Service\Core\CategoryService;
-use App\Service\Core\PostService;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -15,30 +12,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class BlogController extends Controller
+class BlogController extends BaseController
 {
-    /** @var PostService $postService */
-    private $postService;
-
-    /** @var  CategoryService $categoryService */
-    private $categoryService;
-
-    /** @var PostDecorator $postDecorator */
-    private $postDecorator;
-
-    /**
-     * BlogController constructor.
-     * @param PostService $postService
-     * @param PostDecorator $postDecorator
-     * @param CategoryService $categoryService
-     */
-    public function __construct(PostService $postService, PostDecorator $postDecorator, CategoryService $categoryService)
-    {
-        $this->postService = $postService;
-        $this->categoryService = $categoryService;
-        $this->postDecorator = $postDecorator;
-    }
-
     /**
      * @Route("/", name="spiral_front_index")
      * @Route("/page/{page}", name="spiral_front_index_listing", requirements={"page"="\d+"})
@@ -132,39 +107,6 @@ class BlogController extends Controller
 
         return $this->render('frontend/toroide/post.html.twig', [
             'post' => $this->postService->getOneBy(['slug' => $slug, 'category' => $category])
-        ]);
-    }
-
-    /**
-     * @return mixed
-     */
-    public function renderSearch()
-    {
-        $form = $this->getSearchForm();
-
-        return $this->render('frontend/toroide/partials/search/form.html.twig', [
-            'form' => $form->createView(),
-        ]);
-    }
-
-    /**
-     * @return mixed
-     */
-    public function renderNavigator()
-    {
-        return $this->render('frontend/toroide/partials/navigator.html.twig', [
-            'categories' => $this->categoryService->getAll(),
-        ]);
-    }
-
-    /**
-     * @return mixed
-     */
-    private function getSearchForm()
-    {
-        return $this->get('form.factory')->createNamed(null, SearchType::class, null, [
-            'action' => $this->generateUrl('spiral_front_search'),
-            'method' => 'GET'
         ]);
     }
 }

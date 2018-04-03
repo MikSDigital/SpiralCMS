@@ -40,7 +40,7 @@
 
                     {{ include('frontend/toroide/partials/post/share.html.twig') }}
 
-                    {{ include('frontend/toroide/partials/post/related.html.twig') }}
+                    {{ render(controller( 'App\\Controller\\Frontend\\BlogController::renderRelatedPosts', {'category': post.category.slug})) }}
 
                     {{ include('frontend/toroide/partials/post/author.html.twig') }}
                 </div>

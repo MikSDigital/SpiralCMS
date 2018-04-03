@@ -11,124 +11,107 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 class PostsFixtures extends Fixture
 {
+    /** @var ObjectManager $manager */
+    private $manager;
 
-
-
+    /**
+     * PostsFixtures constructor.
+     */
+    public function __construct(ObjectManager $manager)
+    {
+        $this->manager = $manager;
+    }
 
     public function load(ObjectManager $manager)
     {
         $author = $this->createAuthor();
-        $manager->persist($author);
 
         $desarrollo = $this->createCategory('Desarrollo','desarrollo');
-        $manager->persist($desarrollo);
-
         $seo = $this->createCategory('SEO','seo');
-        $manager->persist($seo);
-
-        $post = $this->createPost([
-            'title' => 'Cómo hacer una API REST con Node.js',
-            'slug' => 'hacer-una-api-rest-con-node-js',
-            'author' => $author,
-            'category' => $seo
-        ]);
-        $manager->persist($post);
-
         $blackHat = $this->createCategory('Black Hat','black-hat');
-        $manager->persist($blackHat);
-
-        $post = $this->createPost([
-            'title' => 'Hacer un vhost en un Nginx sobre Vagrant',
-            'slug' => 'thacer-un-vhost-en-nginx-sobre-vagrnt',
-            'author' => $author,
-            'category' => $seo
-        ]);
-        $manager->persist($post);
-
-        $post = $this->createPost([
-            'title' => 'Aprende a utilizar mongodb en node js como un PRO',
-            'slug' => 'aprende-utilizar-mongodb-en-node-js',
-            'author' => $author,
-            'category' => $blackHat
-        ]);
-        $manager->persist($post);
-
         $cursos = $this->createCategory('Cursos','cursos');
-        $manager->persist($cursos);
-
         $otros = $this->createCategory('Otros','otros');
-        $manager->persist($otros);
 
-        $post = $this->createPost([
-            'title' => 'Entendiendo el funcionamiento del protocolo HTTP',
-            'slug' => 'entendiendo-protocolo-http',
-            'author' => $author,
-            'category' => $cursos
+        $this->createPostsFromArray([
+            [
+                'title' => 'Cómo hacer una API REST con Node.js',
+                'slug' => 'hacer-una-api-rest-con-node-js',
+                'author' => $author,
+                'category' => $seo
+            ],
+            [
+                'title' => 'Hacer un vhost en un Nginx sobre Vagrant',
+                'slug' => 'thacer-un-vhost-en-nginx-sobre-vagrnt',
+                'author' => $author,
+                'category' => $seo
+            ],
+            [
+                'title' => 'Aprende a utilizar mongodb en node js como un PRO',
+                'slug' => 'aprende-utilizar-mongodb-en-node-js',
+                'author' => $author,
+                'category' => $blackHat
+            ],
+            [
+                'title' => 'Entendiendo el funcionamiento del protocolo HTTP',
+                'slug' => 'entendiendo-protocolo-http',
+                'author' => $author,
+                'category' => $cursos
+            ],
+            [
+                'title' => 'Enlace estático en tiempo de ejecución en la programación orientada a objetos',
+                'slug' => 'enlace-estatico-en-tiempo-de-ejecucion',
+                'author' => $author,
+                'category' => $cursos
+            ],
+            [
+                'title' => 'Mi top five de herramientas de programación',
+                'slug' => 'mi-top-five-de-herramientas-de-programacion',
+                'author' => $author,
+                'category' => $cursos
+            ],
+            [
+                'title' => 'Sobrecarga en la programación orientada a objetos',
+                'slug' => 'sobrecarga-en-la-programacion',
+                'author' => $author,
+                'category' => $desarrollo
+            ],
+            [
+                'title' => 'Cuando Donald Trump se fue de putas en la cama de los Obama',
+                'slug' => 'cuando-donald-trump-se-fue-de-putas',
+                'author' => $author,
+                'category' => $blackHat
+            ],
+            [
+                'title' => 'Un enlace EDU DOFOLLOW en Academia.edu',
+                'slug' => 'enlace-edu-dofollow-en-academia',
+                'author' => $author,
+                'category' => $cursos
+            ],
+            [
+                'title' => 'El día que forocoches troleó a un gran partido político',
+                'slug' => 'cuando-forocoches-troleo-al-psoe',
+                'author' => $author,
+                'category' => $cursos
+            ],
+            [
+                'title' => 'Haciendo magia, enlace en un foro con un DA de 55',
+                'slug' => 'enlace-en-un-foro-con-un-da-de-55',
+                'author' => $author,
+                'category' => $otros
+            ]
         ]);
-        $manager->persist($post);
-
-        $post = $this->createPost([
-            'title' => 'Mi top five de herramientas de programación',
-            'slug' => 'mi-top-five-de-herramientas-de-programacion',
-            'author' => $author,
-            'category' => $cursos
-        ]);
-        $manager->persist($post);
-
-        $post = $this->createPost([
-            'title' => 'Enlace estático en tiempo de ejecución en la programación orientada a objetos',
-            'slug' => 'enlace-estatico-en-tiempo-de-ejecucion',
-            'author' => $author,
-            'category' => $cursos
-        ]);
-        $manager->persist($post);
-
-        $post = $this->createPost([
-            'title' => 'Sobrecarga en la programación orientada a objetos',
-            'slug' => 'sobrecarga-en-la-programacion',
-            'author' => $author,
-            'category' => $desarrollo
-        ]);
-        $manager->persist($post);
-
-        $post = $this->createPost([
-            'title' => 'Cuando Donald Trump se fue de putas en la cama de los Obama',
-            'slug' => 'cuando-donald-trump-se-fue-de-putas',
-            'author' => $author,
-            'category' => $blackHat
-        ]);
-        $manager->persist($post);
-
-        $post = $this->createPost([
-            'title' => 'Un enlace EDU DOFOLLOW en Academia.edu',
-            'slug' => 'enlace-edu-dofollow-en-academia',
-            'author' => $author,
-            'category' => $cursos
-        ]);
-        $manager->persist($post);
-
-        $post = $this->createPost([
-            'title' => 'El día que forocoches troleó a un gran partido político',
-            'slug' => 'cuando-forocoches-troleo-al-psoe',
-            'author' => $author,
-            'category' => $cursos
-        ]);
-        $manager->persist($post);
-
-        $post = $this->createPost([
-            'title' => 'Haciendo magia, enlace en un foro con un DA de 55',
-            'slug' => 'enlace-en-un-foro-con-un-da-de-55',
-            'author' => $author,
-            'category' => $otros
-        ]);
-        $manager->persist($post);
-
-
-
-
-
 
         $manager->flush();
+    }
+
+    /**
+     * @param array $data
+     */
+    public function createPostsFromArray(array $data)
+    {
+        foreach ($data as $item) {
+            $this->createPost($item);
+        }
     }
 
     /**
@@ -142,6 +125,8 @@ class PostsFixtures extends Fixture
         $category->setTitle($name);
         $category->setSlug($slug);
 
+        $this->manager->persist($category);
+
         return $category;
     }
 
@@ -154,6 +139,8 @@ class PostsFixtures extends Fixture
         $author->setName('Gorkamu');
         $author->setBio('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.');
 
+        $this->manager->persist($author);
+
         return $author;
     }
 
@@ -161,7 +148,7 @@ class PostsFixtures extends Fixture
      * @param $args
      * @return Post
      */
-    private function createPost($args)
+    private function createPost( array $args)
     {
 
         $body = 'Lorem fistrum apetecan elit voluptate ese que llega. Qui diodenoo ese hombree ut ad. Ese hombree magna hasta luego Lucas apetecan al ataquerl aliqua. Jarl no puedor al ataquerl velit laboris laboris et me cago en tus muelas no te digo trigo por no llamarte Rodrigor. Ut torpedo te voy a borrar el cerito qui et qué dise usteer benemeritaar a wan. Ut ese pedazo de veniam pecador jarl ex diodeno esse. Se calle ustée aliquip ese que llega elit va usté muy cargadoo reprehenderit aliquip jarl. Se calle ustée eiusmod la caidita velit papaar papaar amatomaa hasta luego Lucas. Quis ad eiusmod a wan a peich eiusmod aliqua diodenoo veniam quietooor.
@@ -180,6 +167,8 @@ Te voy a borrar el cerito reprehenderit diodeno ut amatomaa officia incididunt. 
         $post->setStatus(1);
         $post->setExtract($extract);
         $post->setCategory($args['category']);
+
+        $this->manager->persist($post);
 
         return $post;
     }

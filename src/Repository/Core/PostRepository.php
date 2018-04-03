@@ -3,6 +3,7 @@
 namespace App\Repository\Core;
 
 use App\Entity\Core\Post;
+use App\Library\StatusInterface;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -32,8 +33,10 @@ class PostRepository extends ServiceEntityRepository
     public function getLimited($limit, $orderBy = 'p.id', $order = 'asc')
     {
         $query = $this->createQueryBuilder('p')
+            ->where('p.status = :status ')
+            ->setParameter('status', StatusInterface::STATUS_ONLINE)
             ->orderBy($orderBy, $order)
-            ->setMaxResults( $limit );
+            ->setMaxResults($limit);
 
         return $query->getQuery()->getResult();
     }
@@ -43,7 +46,9 @@ class PostRepository extends ServiceEntityRepository
      */
     public function findAllQuery()
     {
-        $query = $this->createQueryBuilder('p');
+        $query = $this->createQueryBuilder('p')
+            ->where('p.status = :status ')
+            ->setParameter('status', StatusInterface::STATUS_ONLINE);
 
         return $query->getQuery();
     }
@@ -56,38 +61,28 @@ class PostRepository extends ServiceEntityRepository
     {
         $query = $this->createQueryBuilder('p')
             ->where('p.title LIKE :title')
-            ->setParameter('title', '%' . $title . '%');
+            ->andWhere('p.status = :status ')
+            ->setParameter('title', '%' . $title . '%')
+            ->setParameter('status', StatusInterface::STATUS_ONLINE);
 
         return $query->getQuery()->getResult();
     }
 
-
-//    /**
-//     * @return Post[] Returns an array of Post objects
-//     */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @param $category
+     * @param $limit
+     * @return mixed
+     */
+    public function findRelatedPostsByCategory($category, $limit)
     {
-        return $this->createQueryBuilder('b')
-            ->andWhere('b.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('b.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+        $query = $this->createQueryBuilder('p')
+            ->innerJoin('p.category', 'c')
+            ->where('c.slug = :category ')
+            ->andWhere('p.status = :status ')
+            ->setParameter('category', $category)
+            ->setParameter('status', StatusInterface::STATUS_ONLINE)
+            ->setMaxResults($limit);
 
-    /*
-    public function findOneBySomeField($value): ?Post
-    {
-        return $this->createQueryBuilder('b')
-            ->andWhere('b.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        return $query->getQuery()->getResult();
     }
-    */
 }

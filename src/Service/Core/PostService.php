@@ -103,4 +103,14 @@ class PostService
     {
         return $posts[rand(0, sizeof($posts)-1)];
     }
+
+    /**
+     * @param $category
+     * @param int $limit
+     * @return mixed
+     */
+    public function getRelatedPostsByCategory($category, $limit = 3)
+    {
+        return $this->repository->findRelatedPostsByCategory($category, $limit);
+    }
 }
