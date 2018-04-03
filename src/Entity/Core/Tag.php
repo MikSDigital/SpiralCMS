@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\Core\TagRepository")
+ * @ORM\Table(name="spiral_tag")
  */
 class Tag
 {

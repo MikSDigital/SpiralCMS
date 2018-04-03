@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\Core\PostRepository")
+ * @ORM\Table(name="spiral_post")
  */
 class Post
 {
