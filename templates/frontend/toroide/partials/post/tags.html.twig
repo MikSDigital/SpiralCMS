@@ -1,5 +1,5 @@
 <ul class="list-inline spiral-list-inline">
-    <li class="list-inline-item">Lorem ipsum</li>
-    <li class="list-inline-item">Phasellus iaculis</li>
-    <li class="list-inline-item">Nulla volutpat</li>
+    {% for tag in post.tags %}
+        <li class="list-inline-item">{{ tag.title }}</li>
+    {% endfor %}
 </ul>

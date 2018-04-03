@@ -6,6 +6,8 @@ namespace App\DataFixtures\ORM;
 use App\Entity\Core\Author;
 use App\Entity\Core\Category;
 use App\Entity\Core\Post;
+use App\Entity\Core\Tag;
+use DateTime;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -141,8 +143,29 @@ Te voy a borrar el cerito reprehenderit diodeno ut amatomaa officia incididunt. 
         $post->setExtract($extract);
         $post->setCategory($args['category']);
 
+        $date = new DateTime();
+
+        $post->addTag($this->createTag('programacion'.rand(0, $date->getTimestamp())));
+        $post->addTag($this->createTag('php'.rand(0, $date->getTimestamp())));
+        $post->addTag($this->createTag('git'.rand(0, $date->getTimestamp())));
+
         $this->manager->persist($post);
 
         return $post;
+    }
+
+    /**
+     * @param $title
+     * @return Tag
+     */
+    private function createTag($title)
+    {
+        $tag = new Tag();
+        $tag->setTitle($title);
+        $tag->setSlug($title);
+
+        $this->manager->persist($tag);
+
+        return $tag;
     }
 }
