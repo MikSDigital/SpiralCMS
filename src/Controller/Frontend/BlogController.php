@@ -85,7 +85,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/whoami", name="spiral_front_whoami")
+     * @Route("/README.md", name="spiral_front_readmemd")
      * @Method({"GET"})
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
