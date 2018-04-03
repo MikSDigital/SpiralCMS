@@ -48,7 +48,12 @@ class MetadataService
                 break;
 
             case 'description':
+            case 'keywords':
                 echo '<meta name="' . $key . '" content="' . $item . '">';
+                break;
+
+            case 'encoding':
+                echo '<meta charset="' . $item . '">';
                 break;
         }
     }

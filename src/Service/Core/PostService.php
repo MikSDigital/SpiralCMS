@@ -62,11 +62,18 @@ class PostService
         return $this->repository->findAll();
     }
 
+    /**
+     * @return mixed
+     */
     public function getAllQuery()
     {
         return $this->repository->findAllQuery();
     }
 
+    /**
+     * @param Category $category
+     * @return mixed
+     */
     public function getByCategoryQuery(Category $category)
     {
         return $this->repository->findByCategoryQuery($category);

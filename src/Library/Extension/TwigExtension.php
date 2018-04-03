@@ -19,7 +19,6 @@ class TwigExtension extends \Twig_Extension
         $this->metadataService = $metadataService;
     }
 
-
     /**
      * @return array|Twig_Function[]
      */
