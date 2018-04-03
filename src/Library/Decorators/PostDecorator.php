@@ -4,6 +4,7 @@
 namespace App\Library\Decorators;
 
 
+use App\Entity\Core\Category;
 use App\Service\Core\PostService;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,21 +30,36 @@ class PostDecorator
     }
 
     /**
-     * @param Request $request
+     * @param $parameter
      * @param $route
-     * @param $item
+     * @param null $query
      * @return mixed
      */
-    public function getAllPostsPaginated(Request $request, $route, $item)
+    public function getPaginated($parameter, $route, $query = null)
     {
+        if(!$query) {
+            $query = $this->postService->getAllQuery();
+        }
+
         $pagination = $this->paginator->paginate(
-            $this->postService->getAllQuery(),
-            $request->query->get('page', $item),
+            $query,
+            $parameter,
             5
         );
         $pagination->setUsedRoute($route);
 
         return $pagination;
+    }
+
+    /**
+     * @param Category $category
+     * @param $parameter
+     * @param $route
+     * @return mixed
+     */
+    public function getPaginatedByCategory(Category $category, $parameter, $route)
+    {
+        return $this->getPaginated($parameter, $route, $this->postService->getByCategoryQuery($category));
     }
 
 }

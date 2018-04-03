@@ -3,6 +3,7 @@
 
 namespace App\Service\Core;
 
+use App\Entity\Core\Category;
 use App\Entity\Core\Post;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Knp\Component\Pager\Paginator;
@@ -64,6 +65,11 @@ class PostService
     public function getAllQuery()
     {
         return $this->repository->findAllQuery();
+    }
+
+    public function getByCategoryQuery(Category $category)
+    {
+        return $this->repository->findByCategoryQuery($category);
     }
 
     /**

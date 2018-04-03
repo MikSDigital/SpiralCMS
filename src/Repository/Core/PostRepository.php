@@ -54,6 +54,22 @@ class PostRepository extends ServiceEntityRepository
     }
 
     /**
+     * @param $category
+     * @return mixed
+     */
+    public function findByCategoryQuery($category)
+    {
+        $query = $this->createQueryBuilder('p')
+            ->innerJoin('p.category', 'c')
+            ->where('c.id = :category ')
+            ->andWhere('p.status = :status')
+            ->setParameter('category', $category->getId())
+            ->setParameter('status', StatusInterface::STATUS_ONLINE);
+
+        return $query->getQuery();
+    }
+
+    /**
      * @param $title
      * @return mixed
      */

@@ -24,7 +24,7 @@ class BlogController extends BaseController
      */
     public function getHome(Request $request, $page = 0)
     {
-        $posts = $this->postDecorator->getAllPostsPaginated($request, 'spiral_front_index_listing', $page);
+        $posts = $this->postDecorator->getPaginated($request->query->get('page', $page), 'spiral_front_index_listing');
 
         return $this->render('frontend/toroide/index.html.twig', [
             'posts' => $posts,
@@ -72,18 +72,20 @@ class BlogController extends BaseController
 
     /**
      * @Route("/{categorySlug}", name="spiral_front_category", requirements={"slug" = "^(?!.*(search|listing)$).*"}, options = {"expose"=true})
+     * @Route("/{categorySlug}/{page}", name="spiral_front_category_listing", requirements={"page"="\d+"})
      * @Method({"GET"})
      * @param $categorySlug
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function getCategory($categorySlug)
+    public function getCategory(Request $request, $categorySlug, $page = 0)
     {
         $category = $this->categoryService->getOneBy(['slug' => $categorySlug]);
         if(!$category instanceof Category) {
             throw new NotFoundHttpException();
         }
 
-        $posts = $this->postService->getBy(['category' => $category]);
+        $parameter = $request->query->get('page', $page);
+        $posts = $this->postDecorator->getPaginatedByCategory($category, $parameter, 'spiral_front_category_listing');
 
         return $this->render('frontend/toroide/category.html.twig', [
             'category' => $category,

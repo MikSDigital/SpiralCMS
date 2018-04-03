@@ -63,14 +63,14 @@ class PostsFixtures extends Fixture
     private function createPostsData(array $data)
     {
         $this->createPostsFromArray([
-            $this->createPostArray('Cómo hacer una API REST con Node.js', 'hacer-una-api-rest-con-node-js', $data['categories']['desarrollo']),
+            $this->createPostArray('Cómo hacer una API REST con Node.js', 'hacer-una-api-rest-con-node-js', $data['categories']['seo']),
             $this->createPostArray('Hacer un vhost en un Nginx sobre Vagrant', 'thacer-un-vhost-en-nginx-sobre-vagrnt', $data['categories']['seo']),
             $this->createPostArray('Aprende a utilizar mongodb en node js como un PRO', 'aprende-utilizar-mongodb-en-node-js', $data['categories']['seo']),
-            $this->createPostArray('Entendiendo el funcionamiento del protocolo HTTP', 'entendiendo-protocolo-http', $data['categories']['blackHat']),
-            $this->createPostArray('Enlace estático en tiempo de ejecución en la programación orientada a objetos', 'enlace-estatico-en-tiempo-de-ejecucion', $data['categories']['cursos']),
-            $this->createPostArray('Mi top five de herramientas de programación', 'mi-top-five-de-herramientas-de-programacion', $data['categories']['cursos']),
+            $this->createPostArray('Entendiendo el funcionamiento del protocolo HTTP', 'entendiendo-protocolo-http', $data['categories']['seo']),
+            $this->createPostArray('Enlace estático en tiempo de ejecución en la programación orientada a objetos', 'enlace-estatico-en-tiempo-de-ejecucion', $data['categories']['seo']),
+            $this->createPostArray('Mi top five de herramientas de programación', 'mi-top-five-de-herramientas-de-programacion', $data['categories']['seo']),
             $this->createPostArray('Sobrecarga en la programación orientada a objetos', 'sobrecarga-en-la-programacion', $data['categories']['otros']),
-            $this->createPostArray('Cuando Donald Trump se fue de putas en la cama de los Obama', 'cuando-donald-trump-se-fue-de-putas', $data['categories']['blackHat']),
+            $this->createPostArray('Cuando Donald Trump se fue de putas en la cama de los Obama', 'cuando-donald-trump-se-fue-de-putas', $data['categories']['seo']),
             $this->createPostArray('El día que forocoches troleó a un gran partido político', 'cuando-forocoches-troleo-al-psoe', $data['categories']['seo']),
         ]);
     }
