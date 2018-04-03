@@ -1,0 +1,28 @@
+/* TOROIDE COMMON VARIABLES */
+$toroide-title-font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+
+/* TOROIDE TAG LIST VARIABLES */
+$toroide-tag-list-background-color: #00fdff42;
+$toroide-tag-list-color: #4e4e4e;
+$toroide-tag-list-font-size: 10px;
+
+/* TOROIDE CARD VARIABLES */
+$toroide-card-title-color: #292929;
+$toroide-card-posted-color: #999999;
+
+/* TOROIDE POST AUTHOR CARD VARIABLES */
+$toroide-post-author-card-line-color: #e5e5e5;
+
+/* TOROIDE THEME MAIN & COMMON STYLES */
+a { color: #ff0099; }
+a:hover { color: #ff0099; text-decoration: underline; }
+body { color: #484848; }
+.toroide-card { border: 0px; }
+.toroide-col-center { float: none; margin: 0 auto; }
+.toroide-card-title { font-family: $toroide-title-font-family; color: $toroide-card-title-color; }
+.toroide-font-family { font-family: $toroide-title-font-family; }
+.toroide-no-border { border: none; }
+.toroide-content { margin-top: 2%; }
+.toroide-right-bar { margin-top: 2%; }
+.toroide-text-align { text-align: center; }
+.toroide-category-title { color: #ff0099; }

@@ -1,0 +1,12 @@
+/* TOROIDE TAG LIST STYLE */
+
+.toroide-tag-list {
+  font-size: $toroide-tag-list-font-size;
+  margin-top:2%;
+}
+
+.toroide-tag-list li {
+  background-color: $toroide-tag-list-background-color;
+  color: $toroide-tag-list-color;
+  padding: 0.5%;
+}

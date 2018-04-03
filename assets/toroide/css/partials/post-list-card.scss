@@ -1,0 +1,15 @@
+/* TOROIDE POST LIST CARD STYLES */
+.toroide-post-card-title a{
+  font-family: $toroide-title-font-family;
+  color: #292929;
+}
+
+.toroide-post-card-title a:hover {
+  color: #292929;
+  text-decoration: underline;
+}
+
+.toroide-post-list-card-text {
+  margin-top:0%;
+  margin-bottom: 1px;
+}

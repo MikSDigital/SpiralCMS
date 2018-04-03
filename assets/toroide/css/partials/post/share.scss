@@ -1,0 +1,45 @@
+/* TOROIDE SOCIAL MEDIA SHARE STYLES */
+
+.toroide-line-center {
+  width: 100%;
+  position: relative;
+  margin-top:15%;
+}
+
+.toroide-line-center:before, .toroide-line-center:after {
+  content: '';
+  position: absolute;
+  top: 51px;
+  height: 1px;
+  background: #e5e5e5;
+  width: 31%;
+  display: block;
+}
+.toroide-line-center:before {
+  left: 0;
+}
+.toroide-line-center:after {
+  right: 0;
+}
+
+.toroide-share {
+  margin-top:15%;
+}
+
+.toroide-fa {
+  padding: 20px;
+  font-size: 15px;
+  width: 55px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+  background-color: #00fdb1;
+  color: white;
+}
+
+.toroide-fa:hover {
+  opacity: 0.7;
+  text-decoration: none;
+  color: #565655;
+}

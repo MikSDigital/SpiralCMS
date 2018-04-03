@@ -1,0 +1,45 @@
+/* TOROIDE POST AUTHOR CARD STYLES */
+
+.toroide-post-author-card {
+  width: 100%;
+  position: relative;
+  margin-top:15%;
+}
+
+.toroide-post-author-card:before, .toroide-post-author-card:after {
+  content: '';
+  position: absolute;
+  top: 16px;
+  height: 1px;
+  background: $toroide-post-author-card-line-color;
+  width: 42%;
+  display: block;
+}
+
+.toroide-post-author-card:before {
+  left: 0;
+}
+
+.toroide-post-author-card:after {
+  right: 0;
+}
+
+.toroide-post-author-avatar {
+  position: relative;
+  top: -50px;
+  margin-bottom: -50px;
+}
+
+.toroide-post-author-avatar img {
+  width: 100px;
+  height: 100px;
+  max-width: 100px;
+  max-height: 100px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 5px solid rgba(255,255,255,0.5);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,251 +1,40 @@
+/*
+  ----------------
+  BOOTSTRAP STYLES
+  ----------------
+*/
 @import '~startbootstrap-blog-home/vendor/bootstrap/css/bootstrap.css';
 @import '~startbootstrap-blog-home/vendor/bootstrap/css/bootstrap-grid.css';
 @import '~startbootstrap-blog-home/vendor/bootstrap/css/bootstrap-reboot.css';
 
-$cinco-percent: 5%;
-$dos-percent: 2%;
+/*
+  ---------------------
+  SPIRAL TOROIDE STYLES
+  ---------------------
+*/
+@import 'style.scss';
 
-$grey: #999999;
-$font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-
-a { color: #ff0099; }
-a:hover { color: #ff0099; text-decoration: underline; }
-
-.grey { color: $grey; }
-.font-family {
-  font-family: $font-family;
-}
-
-.no-border {
-  border: none;
-}
-
-body {     color: #484848; }
-
-.spiralcms-blogentries-content {
-  margin-top: $dos-percent;
-}
-
-.spiralcms-right-bar {
-  margin-top: $dos-percent;;
-}
-
-.spiral-col-center {
-  float: none;
-  margin: 0 auto;
-}
-
-.spiral-blog-header {
-  line-height: 1;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.spiral-blog-header-content {
-  height: 200px;
-}
-
-.spiral-card {
-  border: 0px;
-}
-
-.spiral-post-card-text {
-  margin-top:5%;
-}
-
-.spiral-post-list-card-text {
-  margin-top:0%;
-  margin-bottom: 1px;
-}
-
-.spiral-card-title {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  color: #292929;
-}
-
-.spiral-card-posted {
-  font-size: 10px;
-  color: #999999;
-}
-
-.spiral-index-card-title-link{
-  color:black;
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-}
-
-.index-spiral-card {
-  margin-bottom: 10%;
-}
-
-.spiral-jumbotron {
-  margin-top:2%;
-}
-
-.spiral-navigator {
-  background-color: white !important;
-  margin-bottom: 3%;
-}
-
-.spiral-fa {
-  padding: 20px;
-  font-size: 15px;
-  width: 55px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-  border-radius: 50%;
-  background-color: #00fdb1;
-  color: white;
-}
-.spiral-fa:hover {
-  opacity: 0.7;
-  text-decoration: none;
-  color: #565655;
-}
-
-.spiral-related-post-title {
-  margin-top: 5%;
-}
-
-.spiral-logo {
-  width: 35%;
-}
-
-.spiral-list-inline {
-  font-size: 10px;
-  margin-top:2%;
-}
-
-.spiral-list-inline li {
-  background-color: #00fdff42;
-  color: #4e4e4e;
-  padding: 0.5%;
-}
-
-.spiral-avatar {
-  position: relative;
-  top: -50px;
-  margin-bottom: -50px;
-}
-
-.spiral-avatar img {
-  width: 100px;
-  height: 100px;
-  max-width: 100px;
-  max-height: 100px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  border: 5px solid rgba(255,255,255,0.5);
-}
-
-.info {
-  text-align: center;
-}
-
-.spiral-avatar-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
+/*
+  -------------------------------
+  SPIRAL TOROIDE COMPONENT STYLES
+  -------------------------------
+*/
+@import 'author';
+@import 'category';
+@import 'index';
+@import 'post';
+@import 'search';
+@import 'partials/header';
+@import 'partials/navigator';
+@import 'partials/post-list-card';
+@import 'partials/home/featured_post';
+@import 'partials/home/jumbotron';
+@import 'partials/pagination/sliding';
+@import 'partials/post/author';
+@import 'partials/post/content';
+@import 'partials/post/related';
+@import 'partials/post/share';
+@import 'partials/post/tags';
+@import 'partials/search/form';
 
 
-.spiral-related-posts, .spiral-share {
-  margin-top:15%;
-}
-
-
-.spiral-author-card {
-  width: 100%;
-  position: relative;
-  margin-top:15%;
-}
-
-.spiral-author-card:before, .spiral-author-card:after {
-  content: '';
-  position: absolute;
-  top: 16px;
-  height: 1px;
-  background: #e5e5e5;
-  width: 42%;
-  display: block;
-}
-.spiral-author-card:before {
-  left: 0;
-}
-.spiral-author-card:after {
-  right: 0;
-}
-
-
-
-
-
-.spiral-line-center {
-  width: 100%;
-  position: relative;
-  margin-top:15%;
-}
-
-.spiral-line-center:before, .spiral-line-center:after {
-  content: '';
-  position: absolute;
-  top: 51px;
-  height: 1px;
-  background: #e5e5e5;
-  width: 31%;
-  display: block;
-}
-.spiral-line-center:before {
-  left: 0;
-}
-.spiral-line-center:after {
-  right: 0;
-}
-
-
-
-
-
-.spiral-fa {
-  padding: 20px;
-  font-size: 15px;
-  width: 55px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-  border-radius: 50%;
-  background-color: #00fdb1;
-  color: white;
-}
-
-.spiral-post-card-title a{
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  color: #292929;
-}
-
-.spiral-post-card-title a:hover {
-  color: #292929;
-  text-decoration: underline;
-}
-
-.category-title {
-  color: #ff0099;
-}
-
-
-
-.spiral-search-result-input {
-  color: #ff0099;
-  text-decoration: underline;
-}
-
-.spiral-result-text {
-  margin-bottom: 0;
-  font-size: 80%;
-  color:#999a99;
-}
-
-.spiral-featured-post-content {
-  padding-top: 0px;
-}

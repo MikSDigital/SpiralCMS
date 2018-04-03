@@ -1,11 +1,11 @@
-<div class="card mb-4 spiral-card spiral-related-posts">
+<div class="card mb-4 toroide-card toroide-related-posts">
     <div class="card-body">
-        <h3 class="card-title spiral-card-title">Artículos relacionados</h3>
+        <h3 class="card-title toroide-card-title">Artículos relacionados</h3>
         <div class="row">
             {% for post in posts %}
-                <div class="col-md-4 card spiral-card">
+                <div class="col-md-4 card toroide-card">
                     <img class="card-img-top" src="http://placehold.it/600x600" alt="Card image cap">
-                    <p class="card-text spiral-related-post-title">{{ post.title }}</p>
+                    <p class="card-text toroide-related-post-title">{{ post.title }}</p>
                 </div>
             {% endfor %}
         </div>
