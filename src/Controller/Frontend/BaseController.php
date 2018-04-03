@@ -6,6 +6,7 @@ namespace App\Controller\Frontend;
 use App\Entity\Core\Post;
 use App\Form\Type\SearchType;
 use App\Library\Decorators\PostDecorator;
+use App\Service\Core\AuthorService;
 use App\Service\Core\CategoryService;
 use App\Service\Core\PostService;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,17 +25,23 @@ class BaseController extends Controller
     /** @var PostDecorator $postDecorator */
     protected $postDecorator;
 
+    /** @var  AuthorService $authorService */
+    protected $authorService;
+
     /**
      * BlogController constructor.
      * @param PostService $postService
      * @param PostDecorator $postDecorator
      * @param CategoryService $categoryService
+     * @param AuthorService $authorService
+     * @internal param AuthorService $service
      */
-    public function __construct(PostService $postService, PostDecorator $postDecorator, CategoryService $categoryService)
+    public function __construct(PostService $postService, PostDecorator $postDecorator, CategoryService $categoryService, AuthorService $authorService)
     {
         $this->postService = $postService;
         $this->categoryService = $categoryService;
         $this->postDecorator = $postDecorator;
+        $this->authorService = $authorService;
     }
 
     /**

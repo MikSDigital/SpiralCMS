@@ -2,6 +2,7 @@
 
 namespace App\Controller\Frontend;
 
+use App\Entity\Core\Author;
 use App\Entity\Core\Category;
 use App\Entity\Core\Post;
 use App\Form\Type\SearchType;
@@ -60,14 +61,19 @@ class BlogController extends BaseController
     }
 
     /**
-     * @Route("/about/{authorName}", name="spiral_front_about")
+     * @Route("/about/{authorSlug}", name="spiral_front_about")
      * @Method({"GET"})
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function getAbout(Request $request, $authorName)
+    public function getAbout(Request $request, $authorSlug)
     {
-        return $this->render('frontend/toroide/author.html.twig');
+        $author = $this->authorService->getOneBy(['slug' => $authorSlug]);
+        if(!$author instanceof Author) {
+            throw new NotFoundHttpException();
+        }
+
+        return $this->render('frontend/toroide/author.html.twig', ['author' => $author]);
     }
 
     /**

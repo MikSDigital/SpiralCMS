@@ -3,8 +3,8 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/gorkamu/SpiralCMS/test_coverage)
 
 
-Docker environment for a Symfony4 project
-==================================
+SpiralCMS
+=========
 
 # Add to your project
 

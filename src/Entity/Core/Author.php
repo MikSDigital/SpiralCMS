@@ -5,7 +5,7 @@ namespace App\Entity\Core;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\Core\AuthorRepository")
+ * @ORM\Entity()
  */
 class Author
 {
@@ -17,9 +17,14 @@ class Author
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, name="author_name")
+     * @ORM\Column(type="string", length=64, name="author_name")
      */
     private $name;
+
+    /**
+     * @ORM\Column(type="string", length=64, name="author_slug")
+     */
+    private $slug;
 
     /**
      * @ORM\Column(name="author_bio", type="string", length=500)
@@ -123,5 +128,21 @@ class Author
     public function setUpdatedAt($updatedAt): void
     {
         $this->updatedAt = $updatedAt;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param mixed $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
     }
 }

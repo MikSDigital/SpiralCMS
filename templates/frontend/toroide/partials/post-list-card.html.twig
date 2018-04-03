@@ -2,7 +2,7 @@
     <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
     <div class="card-body">
         <h2 class="card-title spiral-post-card-title"><a href="{{ path('spiral_front_post', {'categorySlug': post.category.slug, 'slug': post.slug}) }}">{{ post.title }}</a></h2>
-        <small class="spiral-card-posted">Posted on {{ post.createdAt | date("F jS \\a\\t g:ia") }} by <a href="{{ path('spiral_front_about', {'authorName': post.author.name}) }}">{{ post.author.name }}</a> on <a href="{{ path('spiral_front_category', {'categorySlug': post.category.slug}) }}">{{ post.category.title }}</a></small>
+        <small class="spiral-card-posted">Posted on {{ post.createdAt | date("F jS \\a\\t g:ia") }} by <a href="{{ path('spiral_front_about', {'authorSlug': post.author.slug}) }}">{{ post.author.name }}</a> on <a href="{{ path('spiral_front_category', {'categorySlug': post.category.slug}) }}">{{ post.category.title }}</a></small>
         <p class="card-text spiral-post-list-card-text" style="margin-bottom: 1px;">{{ post.extract }}</p>
         <a href="{{ path('spiral_front_post', {'categorySlug': post.category.slug, 'slug': post.slug}) }}">Leer mas→</a>
     </div>
