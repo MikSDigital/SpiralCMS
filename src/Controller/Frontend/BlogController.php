@@ -22,7 +22,7 @@ class BlogController extends BaseController
      * @param int $page
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function getHome(Request $request, $page = 0)
+    public function getHome(Request $request, $page = 1)
     {
         $posts = $this->postDecorator->getPaginated($request->query->get('page', $page), 'spiral_front_index_listing');
 
@@ -74,10 +74,12 @@ class BlogController extends BaseController
      * @Route("/{categorySlug}", name="spiral_front_category", requirements={"slug" = "^(?!.*(search|listing)$).*"}, options = {"expose"=true})
      * @Route("/{categorySlug}/{page}", name="spiral_front_category_listing", requirements={"page"="\d+"})
      * @Method({"GET"})
+     * @param Request $request
      * @param $categorySlug
+     * @param int $page
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function getCategory(Request $request, $categorySlug, $page = 0)
+    public function getCategory(Request $request, $categorySlug, $page = 1)
     {
         $category = $this->categoryService->getOneBy(['slug' => $categorySlug]);
         if(!$category instanceof Category) {

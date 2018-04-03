@@ -5,10 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Frontend/BlogController.php" afterPath="$PROJECT_DIR$/src/Controller/Frontend/BlogController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DataFixtures/ORM/PostsFixtures.php" afterPath="$PROJECT_DIR$/src/DataFixtures/ORM/PostsFixtures.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Library/Decorators/PostDecorator.php" afterPath="$PROJECT_DIR$/src/Library/Decorators/PostDecorator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/Core/PostRepository.php" afterPath="$PROJECT_DIR$/src/Repository/Core/PostRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Service/Core/PostService.php" afterPath="$PROJECT_DIR$/src/Service/Core/PostService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/frontend/toroide/category.html.twig" afterPath="$PROJECT_DIR$/templates/frontend/toroide/category.html.twig" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,34 +26,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BlogController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BlogController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/Frontend/BlogController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="86" column="55" selection-start-line="86" selection-start-column="55" selection-end-line="86" selection-end-column="55" />
+            <state relative-caret-position="135">
+              <caret line="81" column="66" selection-start-line="81" selection-start-column="66" selection-end-line="81" selection-end-column="66" />
               <folding>
-                <marker date="1522753089000" expanded="false" signature="47:51" ph="..." />
+                <marker date="1522753459000" expanded="false" signature="47:51" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="41" column="25" selection-start-line="39" selection-start-column="20" selection-end-line="41" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="category.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/category.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -65,8 +41,8 @@
       <file leaf-file-name="PostDecorator.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Library/Decorators/PostDecorator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="61" column="86" selection-start-line="61" selection-start-column="86" selection-end-line="61" selection-end-column="86" />
+            <state relative-caret-position="134">
+              <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
               <folding>
                 <element signature="e#44#73#0#PHP" expanded="true" />
               </folding>
@@ -74,23 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostService.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Service/Core/PostService.php">
+      <file leaf-file-name="PostsFixtures.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/DataFixtures/ORM/PostsFixtures.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="71" column="63" selection-start-line="71" selection-start-column="63" selection-end-line="71" selection-end-column="63" />
-              <folding>
-                <element signature="e#37#66#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PostRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Repository/Core/PostRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="64" column="42" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
+            <state relative-caret-position="375">
+              <caret line="71" column="149" selection-start-line="71" selection-start-column="149" selection-end-line="71" selection-end-column="149" />
               <folding />
             </state>
           </provider>
@@ -198,12 +162,12 @@
         <option value="$PROJECT_DIR$/src/Controller/Frontend/BaseController.php" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/buffer1" />
         <option value="$PROJECT_DIR$/src/Library/StatusInterface.php" />
-        <option value="$PROJECT_DIR$/src/DataFixtures/ORM/PostsFixtures.php" />
         <option value="$PROJECT_DIR$/src/Library/Decorators/PostDecorator.php" />
         <option value="$PROJECT_DIR$/src/Service/Core/PostService.php" />
         <option value="$PROJECT_DIR$/src/Repository/Core/PostRepository.php" />
         <option value="$PROJECT_DIR$/templates/frontend/toroide/category.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/Frontend/BlogController.php" />
+        <option value="$PROJECT_DIR$/src/DataFixtures/ORM/PostsFixtures.php" />
       </list>
     </option>
   </component>
@@ -395,24 +359,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpiralCMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpiralCMS" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -529,12 +475,12 @@
       <workItem from="1522666798379" duration="8712000" />
       <workItem from="1522686733978" duration="25507000" />
       <workItem from="1522744804412" duration="2408000" />
-      <workItem from="1522747555127" duration="5488000" />
+      <workItem from="1522747555127" duration="5879000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76015000" />
+    <option name="totallyTimeSpent" value="76406000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -800,16 +746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="32" column="32" selection-start-line="30" selection-start-column="20" selection-end-line="32" selection-end-column="32" />
-          <folding>
-            <marker date="1522744758000" expanded="true" signature="1517:2097" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/partials/post-list-card.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -842,14 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Frontend/BaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="47" column="48" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/buffer1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -862,14 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataFixtures/ORM/PostsFixtures.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="72" column="161" selection-start-line="72" selection-start-column="161" selection-end-line="72" selection-end-column="161" />
           <folding />
         </state>
       </provider>
@@ -892,24 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Library/Decorators/PostDecorator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="61" column="86" selection-start-line="61" selection-start-column="86" selection-end-line="61" selection-end-column="86" />
-          <folding>
-            <element signature="e#44#73#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="41" column="25" selection-start-line="39" selection-start-column="20" selection-end-line="41" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/category.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
@@ -918,13 +820,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/frontend/toroide/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="32" column="32" selection-start-line="30" selection-start-column="20" selection-end-line="32" selection-end-column="32" />
+          <folding>
+            <marker date="1522744758000" expanded="true" signature="1517:2097" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Frontend/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16">
+          <caret line="47" column="48" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Library/Decorators/PostDecorator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+          <folding>
+            <element signature="e#44#73#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/Frontend/BlogController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="86" column="55" selection-start-line="86" selection-start-column="55" selection-end-line="86" selection-end-column="55" />
+        <state relative-caret-position="135">
+          <caret line="81" column="66" selection-start-line="81" selection-start-column="66" selection-end-line="81" selection-end-column="66" />
           <folding>
-            <marker date="1522753089000" expanded="false" signature="47:51" ph="..." />
+            <marker date="1522753459000" expanded="false" signature="47:51" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataFixtures/ORM/PostsFixtures.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="71" column="149" selection-start-line="71" selection-start-column="149" selection-end-line="71" selection-end-column="149" />
+          <folding />
         </state>
       </provider>
     </entry>
