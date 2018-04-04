@@ -9,6 +9,7 @@ use App\Library\Decorators\PostDecorator;
 use App\Service\Core\AuthorService;
 use App\Service\Core\CategoryService;
 use App\Service\Core\PostService;
+use App\Service\Frontend\SitemapService;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -28,20 +29,24 @@ class BaseController extends Controller
     /** @var  AuthorService $authorService */
     protected $authorService;
 
+    protected $sitemapService;
+
     /**
      * BlogController constructor.
      * @param PostService $postService
      * @param PostDecorator $postDecorator
      * @param CategoryService $categoryService
      * @param AuthorService $authorService
+     * @param SitemapService $sitemapService
      * @internal param AuthorService $service
      */
-    public function __construct(PostService $postService, PostDecorator $postDecorator, CategoryService $categoryService, AuthorService $authorService)
+    public function __construct(PostService $postService, PostDecorator $postDecorator, CategoryService $categoryService, AuthorService $authorService, SitemapService $sitemapService)
     {
         $this->postService = $postService;
         $this->categoryService = $categoryService;
         $this->postDecorator = $postDecorator;
         $this->authorService = $authorService;
+        $this->sitemapService = $sitemapService;
     }
 
     /**

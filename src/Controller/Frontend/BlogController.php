@@ -61,6 +61,20 @@ class BlogController extends BaseController
     }
 
     /**
+     * @Route("/sitemap.{_format}", name="spiral_front_sitemap"), requirements={"_format" = "xml"}
+     * @Method({"GET"})
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function getSitemap(Request $request)
+    {
+        return $this->render('frontend/sitemap.xml.twig', array(
+            'urls'     => $this->sitemapService->getSitemap(),
+            'hostname' => $request->getSchemeAndHttpHost()
+        ));
+    }
+
+    /**
      * @Route("/about/{authorSlug}", name="spiral_front_about")
      * @Method({"GET"})
      * @param Request $request
@@ -77,7 +91,7 @@ class BlogController extends BaseController
     }
 
     /**
-     * @Route("/{categorySlug}", name="spiral_front_category", requirements={"slug" = "^(?!.*(search|listing)$).*"}, options = {"expose"=true})
+     * @Route("/{categorySlug}", name="spiral_front_category", requirements={"categorySlug" = "^(?!sitemap.xml|search|about|listing).+"}, options = {"expose"=true})
      * @Route("/{categorySlug}/{page}", name="spiral_front_category_listing", requirements={"page"="\d+"})
      * @Method({"GET"})
      * @param Request $request
@@ -119,4 +133,5 @@ class BlogController extends BaseController
             'post' => $this->postService->getOneBy(['slug' => $slug, 'category' => $category])
         ]);
     }
+
 }
