@@ -2,6 +2,9 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/gorkamu/SpiralCMS/test_coverage)
 
+[![Maintainability](https://img.shields.io/badge/sideci-ok-green.svg)](https://sideci.com/gh/127560155/news_feed)
+
+
 
 SpiralCMS
 =========
