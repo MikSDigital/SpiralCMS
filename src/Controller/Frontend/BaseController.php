@@ -56,9 +56,18 @@ class BaseController extends Controller
      */
     public function renderRelatedPosts($category)
     {
-        return $this->render('frontend/toroide/partials/post/related.html.twig', [
+        return $this->render('frontend/toroide/partials/post/_related.html.twig', [
             'posts' => $this->postService->getRelatedPostsByCategory($category)
         ]);
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @internal param Request $request
+     */
+    public function renderFooter()
+    {
+        return $this->render('frontend/toroide/partials/_footer.html.twig');
     }
 
     /**
@@ -68,7 +77,7 @@ class BaseController extends Controller
     {
         $form = $this->getSearchForm();
 
-        return $this->render('frontend/toroide/partials/search/form.html.twig', [
+        return $this->render('frontend/toroide/partials/search/_form.html.twig', [
             'form' => $form->createView(),
         ]);
     }
@@ -78,7 +87,7 @@ class BaseController extends Controller
      */
     public function renderNavigator()
     {
-        return $this->render('frontend/toroide/partials/navigator.html.twig', [
+        return $this->render('frontend/toroide/partials/_navigator.html.twig', [
             'categories' => $this->categoryService->getAll(),
         ]);
     }

@@ -5,7 +5,7 @@
         <small class="toroide-card-posted">Posted on {{ post.createdAt | date("F jS \\a\\t g:ia") }} by <a href="{{ path('spiral_front_about', {'authorSlug': post.author.slug}) }}">{{ post.author.name }}</a> on <a href="{{ path('spiral_front_category', {'categorySlug': post.category.slug}) }}">{{ post.category.title }}</a></small>
 
         <!-- Tags -->
-        {{ include('frontend/toroide/partials/post/tags.html.twig') }}
+        {{ include('frontend/toroide/partials/post/_tags.html.twig') }}
 
         <p class="card-text toroide-post-card-text">{{ post.body | raw }}</p>
     </div>

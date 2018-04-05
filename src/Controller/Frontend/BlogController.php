@@ -91,6 +91,26 @@ class BlogController extends BaseController
     }
 
     /**
+     * @Route("/{categorySlug}/{slug}", name="spiral_front_post")
+     * @Method({"GET"})
+     * @param $categorySlug
+     * @param $slug
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function getPost($categorySlug, $slug)
+    {
+        $category = $this->categoryService->getOneBy(['slug' => $categorySlug]);
+        if(!$category instanceof Category) {
+            throw new NotFoundHttpException();
+        }
+
+        return $this->render('frontend/toroide/post.html.twig', [
+            'post' => $this->postService->getOneBy(['slug' => $slug, 'category' => $category])
+        ]);
+    }
+
+
+    /**
      * @Route("/{categorySlug}", name="spiral_front_category", requirements={"categorySlug" = "^(?!sitemap.xml|search|about|listing).+"}, options = {"expose"=true})
      * @Route("/{categorySlug}/{page}", name="spiral_front_category_listing", requirements={"page"="\d+"})
      * @Method({"GET"})
@@ -115,23 +135,5 @@ class BlogController extends BaseController
         ]);
     }
 
-    /**
-     * @Route("/{categorySlug}/{slug}", name="spiral_front_post")
-     * @Method({"GET"})
-     * @param $categorySlug
-     * @param $slug
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function getPost($categorySlug, $slug)
-    {
-        $category = $this->categoryService->getOneBy(['slug' => $categorySlug]);
-        if(!$category instanceof Category) {
-            throw new NotFoundHttpException();
-        }
-
-        return $this->render('frontend/toroide/post.html.twig', [
-            'post' => $this->postService->getOneBy(['slug' => $slug, 'category' => $category])
-        ]);
-    }
 
 }

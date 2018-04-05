@@ -5,7 +5,7 @@
             {% for post in posts %}
                 <div class="col-md-4 card toroide-card">
                     <img class="card-img-top" src="http://placehold.it/600x600" alt="Card image cap">
-                    <p class="card-text toroide-related-post-title">{{ post.title }}</p>
+                    <a class="card-text toroide-related-post-title" href="{{ path('spiral_front_post', { 'categorySlug': post.category.slug, 'slug': post.slug }) }}">{{ post.title }}</a>
                 </div>
             {% endfor %}
         </div>

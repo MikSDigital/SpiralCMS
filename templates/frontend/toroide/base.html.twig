@@ -15,7 +15,7 @@
     <body>
         <div class="container">
             {% block header %}
-                {{ include('frontend/toroide/partials/header.html.twig') }}
+                {{ include('frontend/toroide/partials/_header.html.twig') }}
             {% endblock %}
 
             {% block navigator %}
@@ -23,13 +23,13 @@
             {% endblock %}
 
             {% block jumbotron %}
-                {#{{ include('frontend/toroide/partials/home/jumbotron.html.twig') }}#}
+                {#{{ include('frontend/toroide/partials/home/_jumbotron.html.twig') }}#}
             {% endblock %}
 
             {% block featured_posts %}
                 <div class="row mb-2">
                     {% for featuredpost in featuredPosts %}
-                        {{ include('frontend/toroide/partials/home/featured_post.html.twig') }}
+                        {{ include('frontend/toroide/partials/home/_featured_post.html.twig') }}
                     {% endfor %}
                 </div>
             {% endblock %}
@@ -55,11 +55,7 @@
         </div>
 
         {% block footer %}
-            <footer class="py-5 bg-dark">
-                <div class="container">
-                    <p class="m-0 text-center text-white">Copyright © Your Website 2018</p>
-                </div>
-            </footer>
+            {{ render(controller( 'App\\Controller\\Frontend\\BlogController::renderFooter')) }}
         {% endblock %}
 
         {% block javascripts %}

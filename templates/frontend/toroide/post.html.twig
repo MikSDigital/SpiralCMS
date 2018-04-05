@@ -36,13 +36,13 @@
 
             {% block content %}
                 <div class="col-md-8 toroide-content">
-                    {{ include('frontend/toroide/partials/post/content.html.twig') }}
+                    {{ include('frontend/toroide/partials/post/_content.html.twig') }}
 
-                    {{ include('frontend/toroide/partials/post/share.html.twig') }}
+                    {{ include('frontend/toroide/partials/post/_share.html.twig') }}
 
                     {{ render(controller( 'App\\Controller\\Frontend\\BlogController::renderRelatedPosts', {'category': post.category.slug})) }}
 
-                    {{ include('frontend/toroide/partials/post/author.html.twig') }}
+                    {{ include('frontend/toroide/partials/post/_author.html.twig') }}
                 </div>
             {% endblock %}
 
