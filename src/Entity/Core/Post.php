@@ -66,7 +66,7 @@ class Post
 
     /**
      * @ORM\ManyToMany(targetEntity="Tag")
-     * @ORM\JoinTable(name="post_tag",
+     * @ORM\JoinTable(name="spiral_post_tag",
      *      joinColumns={@ORM\JoinColumn(name="post_id", referencedColumnName="post_id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="tag_id", referencedColumnName="tag_id", unique=true)}
      *      )
