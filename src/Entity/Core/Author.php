@@ -33,6 +33,11 @@ class Author
     private $bio;
 
     /**
+     * @ORM\Column(name="author_signature", type="string", length=128)
+     */
+    private $signature;
+
+    /**
      * @ORM\Column(type="datetime", name="author_createdAt")
      */
     private $createdAt;
@@ -145,5 +150,21 @@ class Author
     public function setSlug($slug)
     {
         $this->slug = $slug;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSignature()
+    {
+        return $this->signature;
+    }
+
+    /**
+     * @param mixed $signature
+     */
+    public function setSignature($signature): void
+    {
+        $this->signature = $signature;
     }
 }
