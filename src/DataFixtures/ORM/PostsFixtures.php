@@ -6,6 +6,7 @@ namespace App\DataFixtures\ORM;
 use App\Entity\Core\Author;
 use App\Entity\Core\Category;
 use App\Entity\Core\Post;
+use App\Entity\Core\Site;
 use App\Entity\Core\Tag;
 use DateTime;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -56,7 +57,7 @@ class PostsFixtures extends Fixture
             'title' => $title,
             'slug' => $slug,
             'category' => $category,
-            'author' => $author,
+            'author' => $author
         ];
     }
 
@@ -127,7 +128,6 @@ class PostsFixtures extends Fixture
      */
     private function createPost(array $args)
     {
-
         $body = 'Lorem fistrum apetecan elit voluptate ese que llega. Qui diodenoo ese hombree ut ad. Ese hombree magna hasta luego Lucas apetecan al ataquerl aliqua. Jarl no puedor al ataquerl velit laboris laboris et me cago en tus muelas no te digo trigo por no llamarte Rodrigor. Ut torpedo te voy a borrar el cerito qui et qué dise usteer benemeritaar a wan. Ut ese pedazo de veniam pecador jarl ex diodeno esse. Se calle ustée aliquip ese que llega elit va usté muy cargadoo reprehenderit aliquip jarl. Se calle ustée eiusmod la caidita velit papaar papaar amatomaa hasta luego Lucas. Quis ad eiusmod a wan a peich eiusmod aliqua diodenoo veniam quietooor.
 
 Quietooor duis llevame al sircoo sexuarl adipisicing enim diodenoo cillum. Eiusmod incididunt velit consequat ullamco enim hasta luego Lucas. Ahorarr ese hombree sed sed magna diodenoo quis. Commodo quis pupita pupita diodeno. Irure exercitation fistro te va a hasé pupitaa officia reprehenderit la caidita diodeno. De la pradera está la cosa muy malar mamaar aliqua ex eiusmod hasta luego Lucas. Laboris al ataquerl incididunt veniam fistro apetecan por la gloria de mi madre incididunt está la cosa muy malar velit adipisicing. Ad fistro veniam pupita sed enim cillum sexuarl. Incididunt condemor amatomaa enim no puedor va usté muy cargadoo no puedor se calle ustée.
