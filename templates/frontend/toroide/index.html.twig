@@ -2,29 +2,44 @@
 
 {% block metadata %}
     {{ get_metadata('{
-            "title": "Whoami",
-            "description": "These video lectures of Professor Gilbert Strang teaching 18.06 were recorded in Fall 1999 and do not correspond precisely to the current  edition of the textbook.",
-            "ldjson": {
-                "@context": "http://schema.org",
-                "@type": "WebPage",
-                "name": "Lecture 12: Graphs, networks, incidence matrices",
-                "alternateName": "Lecture 12: Graphs, networks, incidence matrices",
-                "description": "These video lectures of Professor Gilbert Strang teaching 18.06 were recorded in Fall 1999 and do not correspond precisely to the current  edition of the textbook.",
-                "publisher": {
-                    "@type": "CollegeOrUniversity",
-                    "name": "MIT OpenCourseWare"
-                },
-                "license": "http://creativecommons.org/licenses/by-nc-sa/3.0/us/deed.en_US"
+        "title": "Gorkamu",
+        "description": "Gorkamu gorkamu",
+        "viewport": "width=device-width, initial-scale=1",
+        "ldjson": {
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            "url": "'~app.request.uri~'",
+            "name": "Gorkamu",
+            "author": {
+                "@type": "Person",
+                "name": "Gorka"
             },
-            "og": {
-                "site_name": "ASD",
-                "title": "ASD",
-                "url": "ASD",
-                "type": "blog",
-                "description": "ASD",
-                "image": "ASD"
+            "description": "Descrption asdasd",
+            "publisher": {
+                "@type": "Organization",
+                "name": "Gorka",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://static.tumblr.com/omgciym/W7an1u5a6/logotrasncontorno.png",
+                    "width": "500",
+                    "height": "500"
+                }
+            },
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "'~app.request.getSchemeAndHttpHost()~'/search?s={search_term}",
+                "query-input": "required name=search_term"
             }
-        }') }}
+        },
+        "og": {
+            "site_name": "'~app.request.uri~'",
+            "title": "Gorkamu gorkamu",
+            "url": "'~app.request.uri~'",
+            "type": "blog",
+            "description": "Gorkamu gorkamu",
+            "image": "ASD"
+        }
+}') }}
 {% endblock %}
 
 {% block container %}
