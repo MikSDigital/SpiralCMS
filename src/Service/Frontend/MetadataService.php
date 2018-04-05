@@ -21,6 +21,14 @@ class MetadataService
     }
 
     /**
+     * @param $data
+     */
+    public function getJsonLd($data)
+    {
+        $this->getLdJsonMetaTags($data, true);
+    }
+
+    /**
      * @param $key
      * @param $item
      */
@@ -61,9 +69,9 @@ class MetadataService
     /**
      * @param $item
      */
-    private function getLdJsonMetaTags($item)
+    private function getLdJsonMetaTags($item, $isEncoded = false)
     {
-        echo '<script type="application/ld+json">' . json_encode($item) . '</script>';
+        echo '<script type="application/ld+json">' . ( $isEncoded ? $item : json_encode($item) ) . '</script>';
     }
 
     /**

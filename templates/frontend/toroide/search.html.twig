@@ -2,31 +2,53 @@
 
 {% block metadata %}
     {{ get_metadata('{
-            "title": "Whoami",
-            "description": "These video lectures of Professor Gilbert Strang teaching 18.06 were recorded in Fall 1999 and do not correspond precisely to the current  edition of the textbook.",
-            "ldjson": {
-                "@context": "http://schema.org",
-                "@type": "WebPage",
-                "name": "Lecture 12: Graphs, networks, incidence matrices",
-                "alternateName": "Lecture 12: Graphs, networks, incidence matrices",
-                "description": "These video lectures of Professor Gilbert Strang teaching 18.06 were recorded in Fall 1999 and do not correspond precisely to the current  edition of the textbook.",
-                "publisher": {
-                    "@type": "CollegeOrUniversity",
-                    "name": "MIT OpenCourseWare"
-                },
-                "license": "http://creativecommons.org/licenses/by-nc-sa/3.0/us/deed.en_US"
-            },
-            "og": {
-                "site_name": "ASD",
-                "title": "ASD",
-                "url": "ASD",
-                "type": "blog",
-                "description": "ASD",
-                "image": "ASD"
-            }
-        }') }}
-{% endblock %}
+        "title": "Gorkamu",
+        "description": "Gorkamu gorkamu",
+        "viewport": "width=device-width, initial-scale=1",
+        "og": {
+            "site_name": "'~app.request.uri~'",
+            "title": "Gorkamu gorkamu",
+            "url": "'~app.request.uri~'",
+            "type": "blog",
+            "description": "Gorkamu gorkamu",
+            "image": "ASD"
+        }
+}') }}
 
+
+
+{{ get_jsonld('{
+    "@context": "http://schema.org",
+    "@type": "SearchResultsPage",
+    "mainEntity": [
+        {
+            "@type": "ItemList",
+            "name": "Primary Care Physicians Chicago, IL 60646",
+            "itemListOrder": "http://schema.org/ItemListOrderAscending",
+            "itemListElement":[
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item": {
+                        "@type": "Physician",
+                        "url": "https://healthjoy.com/doctor/bernadette-b-mayer/5365-w-devon-ave-chicago-il-60646/"
+                    }
+
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item": {
+                        "@type": "Physician",
+                        "url": "https://healthjoy.com/doctor/bernadette-b-mayer/5365-w-devon-ave-chicago-il-60646/"
+                    }
+                }
+            ]
+        }
+    ]
+}') }}
+{% endblock %}
+{#http://schema.org/SearchResultsPage#}
 {% block container %}
     <div class="container">
         <div class="row">

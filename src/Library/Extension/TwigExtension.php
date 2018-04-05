@@ -26,6 +26,7 @@ class TwigExtension extends \Twig_Extension
     {
         return array(
             new Twig_Function('get_metadata', [$this, 'getMetadata']),
+            new Twig_Function('get_jsonld', [$this, 'getJsonLd']),
         );
     }
 
@@ -36,5 +37,10 @@ class TwigExtension extends \Twig_Extension
     public function getMetadata($data)
     {
         $this->metadataService->getMetadata($data);
+    }
+
+    public function getJsonLd($data)
+    {
+        $this->metadataService->getJsonLd($data);
     }
 }
