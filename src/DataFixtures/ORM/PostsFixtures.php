@@ -143,6 +143,7 @@ Te voy a borrar el cerito reprehenderit diodeno ut amatomaa officia incididunt. 
         $post->setAuthor($args['author']);
         $post->setStatus(1);
         $post->setExtract($extract);
+        $post->setDescription($extract);
         $post->setCategory($args['category']);
 
         $date = new DateTime();

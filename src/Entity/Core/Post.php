@@ -43,6 +43,11 @@ class Post
     private $updatedAt;
 
     /**
+     * @ORM\Column(type="datetime", nullable=true, name="post_publishedAt")
+     */
+    private $publishedAt;
+
+    /**
      * @ORM\Column(type="integer", name="post_status")
      */
     private $status;
@@ -74,12 +79,18 @@ class Post
     private $tags;
 
     /**
+     * @ORM\Column(type="string", length=256, name="post_description")
+     */
+    private $description;
+
+    /**
      * Post constructor.
      */
     public function __construct()
     {
         $this->createdAt = new \DateTime();
         $this->updatedAt = new \DateTime();
+        $this->publishedAt = null;
         $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -250,5 +261,37 @@ class Post
         }
 
         $this->tags->removeElement($tag);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description): void
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPublishedAt()
+    {
+        return $this->publishedAt;
+    }
+
+    /**
+     * @param mixed $publishedAt
+     */
+    public function setPublishedAt($publishedAt): void
+    {
+        $this->publishedAt = $publishedAt;
     }
 }

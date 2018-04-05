@@ -11,7 +11,6 @@ class MetadataService
     public function getMetadata($data)
     {
         $data = json_decode($data, true);
-
         foreach($data as $key => $item) {
             if(is_array($data[$key])){
                 $this->getObjectMetaTag($key, $item);
@@ -49,6 +48,7 @@ class MetadataService
 
             case 'description':
             case 'keywords':
+            case 'viewport':
                 echo '<meta name="' . $key . '" content="' . $item . '">';
                 break;
 

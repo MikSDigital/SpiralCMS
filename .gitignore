@@ -1,6 +1,8 @@
 
 ###> symfony/framework-bundle ###
+/.gitignore
 /.env
+/.idea/workspace.xml
 /public/bundles/
 /var/
 /vendor/

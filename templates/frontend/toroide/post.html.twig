@@ -2,29 +2,52 @@
 
 {% block metadata %}
     {{ get_metadata('{
-            "title": "' ~ post.title ~ '",
-            "description": "These video lectures of Professor Gilbert Strang teaching 18.06 were recorded in Fall 1999 and do not correspond precisely to the current  edition of the textbook.",
-            "ldjson": {
-                "@context": "http://schema.org",
+        "title": "'~post.title~'",
+        "description": "'~post.description~'",
+        "viewport": "width=device-width, initial-scale=1",
+        "ldjson": {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "mainEntityOfPage": {
                 "@type": "WebPage",
-                "name": "' ~ post.title ~ '",
-                "alternateName": "' ~ post.title ~ '",
-                "description": "These video lectures of Professor Gilbert Strang teaching 18.06 were recorded in Fall 1999 and do not correspond precisely to the current  edition of the textbook.",
-                "publisher": {
-                    "@type": "CollegeOrUniversity",
-                    "name": "' ~ post.author.name ~ '"
-                },
-                "license": "http://creativecommons.org/licenses/by-nc-sa/3.0/us/deed.en_US"
+                "name": "'~app.request.uri~'"
             },
-            "og": {
-                "site_name": "ASD",
-                "title": "' ~ post.title ~ '",
-                "url": "ASD",
-                "type": "blog",
-                "description": "ASD",
-                "image": "ASD"
+            "headline": "'~post.title~'",
+            "alternativeHeadline": "'~post.title~'",
+            "image": "http://example.com/image.jpg",
+            "editor": "'~post.author.name~'",
+            "keywords": "seo sales b2b",
+            "wordcount": "'~post.body|length~'",
+            "publisher": {
+                "@type": "Organization",
+                "name": "'~post.author.name~'",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://static.tumblr.com/omgciym/W7an1u5a6/logotrasncontorno.png",
+                    "width": "500",
+                    "height": "500"
+                }
+            },
+            "url": "'~app.request.uri~'",
+            "datePublished": "'~post.publishedAt|date('Y-m-d')~'",
+            "dateCreated": "'~post.createdAt|date('Y-m-d')~'",
+            "dateModified": "'~post.updatedAt|date('Y-m-d')~'",
+            "description": "'~post.description~'",
+            "articleBody": "'~post.extract~'",
+            "author": {
+                "@type": "Person",
+                "name": "'~post.author.name~'"
             }
-        }') }}
+        },
+        "og": {
+            "site_name": "'~app.request.uri~'",
+            "title": "'~post.title~'",
+            "url": "'~app.request.uri~'",
+            "type": "blog",
+            "description": "'~post.description~'",
+            "image": "ASD"
+        }
+}') }}
 {% endblock %}
 
 {% block container %}
