@@ -1,0 +1,7 @@
+easy_admin:
+    entities:
+        - App\Entity\Core\Post
+        - App\Entity\Core\Tag
+        - App\Entity\Core\Category
+        - App\Entity\Core\Author
+        - App\Entity\Core\Site

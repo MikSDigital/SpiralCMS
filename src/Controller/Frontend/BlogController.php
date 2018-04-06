@@ -111,7 +111,7 @@ class BlogController extends BaseController
 
 
     /**
-     * @Route("/{categorySlug}", name="spiral_front_category", requirements={"categorySlug" = "^(?!sitemap.xml|search|about|listing).+"}, options = {"expose"=true})
+     * @Route("/{categorySlug}", name="spiral_front_category", requirements={"categorySlug" = "^(?!sitemap.xml|search|about|listing|admin).+"}, options = {"expose"=true})
      * @Route("/{categorySlug}/{page}", name="spiral_front_category_listing", requirements={"page"="\d+"})
      * @Method({"GET"})
      * @param Request $request

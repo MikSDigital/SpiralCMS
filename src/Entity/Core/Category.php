@@ -126,4 +126,9 @@ class Category
     {
         $this->updatedAt = $updatedAt;
     }
+
+    public function __toString()
+    {
+        return (string) $this->getTitle();
+    }
 }

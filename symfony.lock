@@ -71,6 +71,15 @@
     "doctrine/orm": {
         "version": "v2.6.1"
     },
+    "easycorp/easyadmin-bundle": {
+        "version": "1.17",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.17",
+            "ref": "66070ea553247b0cd5275e21d0fe5399a25f40be"
+        }
+    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
@@ -91,6 +100,9 @@
     },
     "ocramius/proxy-manager": {
         "version": "2.2.0"
+    },
+    "pagerfanta/pagerfanta": {
+        "version": "v1.0.5"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -246,6 +258,18 @@
             "branch": "master",
             "version": "4.0",
             "ref": "cda8b550123383d25827705d05a42acf6819fe4e"
+        }
+    },
+    "symfony/security": {
+        "version": "v4.0.7"
+    },
+    "symfony/security-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "f8a63faa0d9521526499c0a8f403c9964ecb0527"
         }
     },
     "symfony/stopwatch": {

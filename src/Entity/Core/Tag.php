@@ -5,7 +5,7 @@ namespace App\Entity\Core;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\Core\TagRepository")
+ * @ORM\Entity()
  * @ORM\Table(name="spiral_tag")
  */
 class Tag
@@ -102,5 +102,10 @@ class Tag
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->getTitle();
     }
 }

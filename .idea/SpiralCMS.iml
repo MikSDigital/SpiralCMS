@@ -20,6 +20,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/migrations" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/orm" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/easycorp/easyadmin-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jdorn/sql-formatter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/knplabs/knp-components" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/knplabs/knp-paginator-bundle" />
@@ -27,6 +28,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ocramius/package-versions" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ocramius/proxy-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/pagerfanta/pagerfanta" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
@@ -62,6 +64,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/profiler-pack" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/property-access" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/routing" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/security" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/security-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/stopwatch" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/twig-bridge" />

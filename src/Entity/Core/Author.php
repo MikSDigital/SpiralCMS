@@ -167,4 +167,9 @@ class Author
     {
         $this->signature = $signature;
     }
+
+    public function __toString()
+    {
+        return (string) $this->getName();
+    }
 }
